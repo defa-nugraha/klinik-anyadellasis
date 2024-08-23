@@ -50,6 +50,104 @@
               </a>
             </li>
 
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Pelayanan</span>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-user-injured"></i>
+                </span>
+                <span class="hide-menu">Pasien</span>
+              </a>
+            </li>
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-file-medical"></i>
+                </span>
+                <span class="hide-menu">Rekam Medis</span>
+              </a>
+            </li>
+            
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Apotek</span>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-pills"></i>
+                </span>
+                <span class="hide-menu">Data Obat</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-prescription-bottle-alt"></i>
+                </span>
+                <span class="hide-menu">Resep & Pemberian Obat</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-prescription-bottle-alt"></i>
+                </span>
+                <span class="hide-menu">Riwayat Keluar Obat</span>
+              </a>
+            </li>
+
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Master Data</span>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-users"></i>
+                </span>
+                <span class="hide-menu">Petugas</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="ti ti-stethoscope"></i>
+                </span>
+                <span class="hide-menu">Dokter</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-calendar-check"></i>
+                </span>
+                <span class="hide-menu">Jadwal Dokter</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+                <span>
+                  <i class="fa fa-hospital-user"></i>
+                </span>
+                <span class="hide-menu">Poli</span>
+              </a>
+            </li>
+
             
             
         <!-- End Sidebar navigation -->
