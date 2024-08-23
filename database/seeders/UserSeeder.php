@@ -17,23 +17,30 @@ class UserSeeder extends Seeder
         $users  = [
             [
                 'name' => 'Defa Nugraha',
-                'email' => 'superadmin@gmail.com',
+                'email' => 'admin@gmail.com',
                 'password' => Hash::make('zxasqw12'),
-                'role' => User::ROLE_SUPERADMIN,
+                'role' => 'admin',
                 'alamat' => 'Jl. Pemuda'
             ],
             [
                 'name' => 'Seika Nugraha',
-                'email' => 'admin@gmail.com',
+                'email' => 'doctor@gmail.com',
                 'password' => Hash::make('zxasqw12'),
-                'role' => User::ROLE_ADMIN,
+                'role' => 'doctor',
                 'alamat' => 'Jl. Pemuda'
             ],
             [
                 'name' => 'I Rosiana',
-                'email' => 'customer@gmail.com',
+                'email' => 'nurse@gmail.com',
                 'password' => Hash::make('zxasqw12'),
-                'role' => User::ROLE_CUSTOMER,
+                'role' => 'nurse',
+                'alamat' => 'Jl. Pemuda'
+            ],
+            [
+                'name' => 'I Rosiana',
+                'email' => 'pasien@gmail.com',
+                'password' => Hash::make('zxasqw12'),
+                'role' => 'patient',
                 'alamat' => 'Jl. Pemuda'
             ]
         ];

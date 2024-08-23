@@ -36,7 +36,7 @@
         .bouncing-dots div {
             width: 10px;
             height: 10px;
-            background-color: #0f93fe;
+            background-color: #cb6ce6;
             border-radius: 50%;
             animation: bounce 1.5s infinite;
         }
@@ -65,7 +65,7 @@
         .pulsing-circle {
             width: 20px;
             height: 20px;
-            background-color: #0f93fe;
+            background-color: #cb6ce6;
             border-radius: 50%;
             animation: pulse 1.5s infinite;
         }

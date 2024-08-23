@@ -26,15 +26,18 @@ class HomeController extends Controller
     {
         $role = Auth::user()->role;
         // dd($role);
-        if ($role == 1) {
+        if ($role == 'admin') {
             // superadmin
             return redirect()->route('admin.dashboard');
-        } elseif ($role == 2) {
-            // admin keuangan
-            return redirect()->route('admin-keuangan.dashboard');
-        } elseif ($role == 3) {
-            // customer
-            return redirect()->route('user.dashboard');
+        } elseif ($role == 'doctor') {
+            // dokter
+            return redirect()->route('doctor.dashboard');
+        } elseif ($role == 'nurse') {
+            // nurse
+            return redirect()->route('nurse.dashboard');
+        } elseif ($role == 'patient') {
+            // patient
+            return redirect()->route('patient.dashboard');
         }
 
         return redirect()->route('login');

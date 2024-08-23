@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('no_hp')->nullable();
             $table->string('alamat');
-            $table->enum('role', [1, 2, 3])->default(3);
+            $table->enum('role', ['admin', 'doctor', 'nurse', 'patient'])->default('patient');
             $table->enum('status', [1, 0])->default(1);
             $table->string('foto')->default('default.png');
             $table->timestamp('email_verified_at')->nullable();

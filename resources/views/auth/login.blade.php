@@ -141,7 +141,7 @@
         }
 
         .btn-blue {
-            background-color: #1A237E;
+            background-color: #cb6ce6;
             width: 150px;
             color: #fff;
             border-radius: 2px;
@@ -154,7 +154,7 @@
 
         .bg-blue {
             color: #fff;
-            background-color: #1A237E;
+            background-color: #cb6ce6;
         }
 
         @media screen and (max-width: 991px) {
@@ -190,7 +190,7 @@
                                 <img src="{{asset('img/logo.png')}}" class="logo p-4 ml-3">
                             </div>
                             <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
-                                <img src="{{asset('img/image-2.png')}}" class="image">
+                                <img src="{{asset('img/doctor.png')}}" class="image">
                             </div>
                         </div>
                     </div>

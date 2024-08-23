@@ -62,7 +62,7 @@
 				<a class="nav-link" href="">Home</a>
 			  </li>
 			  <li class="nav-item active">
-				<a class="nav-link" href="">Login</a>
+				<a class="nav-link" href="{{route('login')}}">Login</a>
 			  </li>
 			</ul>
 		  </div>
