@@ -1,9 +1,23 @@
 <?php
 
 use App\Http\Controllers\admin\DashboardAdminController;
+use App\Http\Controllers\admin\DiagnosaAdminController;
+use App\Http\Controllers\admin\DokterAdminController;
+use App\Http\Controllers\admin\IstriAdminController;
+use App\Http\Controllers\admin\JadwalDokterAdminController;
+use App\Http\Controllers\admin\ObatAdminController;
+use App\Http\Controllers\admin\ObatKeluarAdminController;
 use App\Http\Controllers\admin\PasienAdminController;
+use App\Http\Controllers\admin\PendaftaranAdminController;
+use App\Http\Controllers\admin\PetugasAdminController;
+use App\Http\Controllers\admin\PoliAdminController;
+use App\Http\Controllers\admin\RekamMedisAdminController;
+use App\Http\Controllers\admin\RekamMedisKandunganAdminController;
+use App\Http\Controllers\admin\SuamiAdminController;
+use App\Http\Controllers\admin\TindakanAdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingPageController;
+use App\Models\PendaftaranModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +35,111 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [PasienAdminController::class, 'create'])->name('admin.pasien.create');
                 Route::post('/store', [PasienAdminController::class, 'store'])->name('admin.pasien.store');
                 Route::post('/update', [PasienAdminController::class, 'update'])->name('admin.pasien.update');
-                Route::delete('/delete', [PasienAdminController::class, 'delete'])->name('admin.pasien.delete');
+                Route::delete('/delete/{id}', [PasienAdminController::class, 'delete'])->name('admin.pasien.delete');
+            });
+
+            // diagnosa
+            Route::prefix('diagnosa')->group(function () {
+                Route::get('/', [DiagnosaAdminController::class, 'index'])->name('admin.diagnosa');
+                Route::post('/create', [DiagnosaAdminController::class, 'create'])->name('admin.diagnosa.create');
+                Route::post('/update', [DiagnosaAdminController::class, 'update'])->name('admin.diagnosa.update');
+                Route::delete('/delete/{id}', [DiagnosaAdminController::class, 'delete'])->name('admin.diagnosa.delete');
+            });
+
+            // dokter
+            Route::prefix('dokter')->group(function () {
+                Route::get('/', [DokterAdminController::class, 'index'])->name('admin.dokter');
+                Route::post('/create', [DokterAdminController::class, 'create'])->name('admin.dokter.create');
+                Route::post('/update', [DokterAdminController::class, 'update'])->name('admin.dokter.update');
+                Route::delete('/delete/{id}', [DokterAdminController::class, 'delete'])->name('admin.dokter.delete');
+            });
+
+            // istri
+            Route::prefix('istri')->group(function () {
+                Route::get('/', [IstriAdminController::class, 'index'])->name('admin.istri');
+                Route::post('/create', [IstriAdminController::class, 'create'])->name('admin.istri.create');
+                Route::post('/update', [IstriAdminController::class, 'update'])->name('admin.istri.update');
+                Route::delete('/delete/{id}', [IstriAdminController::class, 'delete'])->name('admin.istri.delete');
+            });
+
+            // suami
+            Route::prefix('suami')->group(function () {
+                Route::get('/', [SuamiAdminController::class, 'index'])->name('admin.suami');
+                Route::post('/create', [SuamiAdminController::class, 'create'])->name('admin.suami.create');
+                Route::post('/update', [SuamiAdminController::class, 'update'])->name('admin.suami.update');
+                Route::delete('/delete/{id}', [SuamiAdminController::class, 'delete'])->name('admin.suami.delete');
+            });
+
+            // pendaftaran
+            Route::prefix('pendaftaran')->group(function () {
+                Route::get('/', [PendaftaranAdminController::class, 'index'])->name('admin.pendaftaran');
+                Route::post('/create', [PendaftaranAdminController::class, 'create'])->name('admin.pendaftaran.create');
+                Route::post('/update', [PendaftaranAdminController::class, 'update'])->name('admin.pendaftaran.update');
+                Route::delete('/delete/{id}', [PendaftaranAdminController::class, 'delete'])->name('admin.pendaftaran.delete');
+            });
+
+            // poli
+            Route::prefix('poli')->group(function () {
+                Route::get('/', [PoliAdminController::class, 'index'])->name('admin.poli');
+                Route::post('/create', [PoliAdminController::class, 'create'])->name('admin.poli.create');
+                Route::post('/update', [PoliAdminController::class, 'update'])->name('admin.poli.update');
+                Route::delete('/delete/{id}', [PoliAdminController::class, 'delete'])->name('admin.poli.delete');
+            });
+
+            // rekam_medis
+            Route::prefix('rekam_medis')->group(function () {
+                Route::get('/', [RekamMedisAdminController::class, 'index'])->name('admin.rekam_medis');
+                Route::post('/create', [RekamMedisAdminController::class, 'create'])->name('admin.rekam_medis.create');
+                Route::post('/update', [RekamMedisAdminController::class, 'update'])->name('admin.rekam_medis.update');
+                Route::delete('/delete/{id}', [RekamMedisAdminController::class, 'delete'])->name('admin.rekam_medis.delete');
+            });
+
+            // rekam_medis_kandungan
+            Route::prefix('rekam_medis_kandungan')->group(function () {
+                Route::get('/', [RekamMedisKandunganAdminController::class, 'index'])->name('admin.rekam_medis_kandungan');
+                Route::post('/create', [RekamMedisKandunganAdminController::class, 'create'])->name('admin.rekam_medis_kandungan.create');
+                Route::post('/update', [RekamMedisKandunganAdminController::class, 'update'])->name('admin.rekam_medis_kandungan.update');
+                Route::delete('/delete/{id}', [RekamMedisKandunganAdminController::class, 'delete'])->name('admin.rekam_medis_kandungan.delete');
+            });
+
+            // tindakan
+            Route::prefix('tindakan')->group(function () {
+                Route::get('/', [TindakanAdminController::class, 'index'])->name('admin.tindakan');
+                Route::post('/create', [TindakanAdminController::class, 'create'])->name('admin.tindakan.create');
+                Route::post('/update', [TindakanAdminController::class, 'update'])->name('admin.tindakan.update');
+                Route::delete('/delete/{id}', [TindakanAdminController::class, 'delete'])->name('admin.tindakan.delete');
+            });
+
+            // jadwal-dokter
+            Route::prefix('jadwal-dokter')->group(function () {
+                Route::get('/', [JadwalDokterAdminController::class, 'index'])->name('admin.jadwal-dokter');
+                Route::post('/create', [JadwalDokterAdminController::class, 'create'])->name('admin.jadwal-dokter.create');
+                Route::post('/update', [JadwalDokterAdminController::class, 'update'])->name('admin.jadwal-dokter.update');
+                Route::delete('/delete/{id}', [JadwalDokterAdminController::class, 'delete'])->name('admin.jadwal-dokter.delete');
+            });
+
+            // obat
+            Route::prefix('obat')->group(function () {
+                Route::get('/', [ObatAdminController::class, 'index'])->name('admin.obat');
+                Route::post('/create', [ObatAdminController::class, 'create'])->name('admin.obat.create');
+                Route::post('/update', [ObatAdminController::class, 'update'])->name('admin.obat.update');
+                Route::delete('/delete/{id}', [ObatAdminController::class, 'delete'])->name('admin.obat.delete');
+            });
+
+            // obat-keluar
+            Route::prefix('obat-keluar')->group(function () {
+                Route::get('/', [ObatKeluarAdminController::class, 'index'])->name('admin.obat-keluar');
+                Route::post('/create', [ObatKeluarAdminController::class, 'create'])->name('admin.obat-keluar.create');
+                Route::post('/update', [ObatKeluarAdminController::class, 'update'])->name('admin.obat-keluar.update');
+                Route::delete('/delete/{id}', [ObatKeluarAdminController::class, 'delete'])->name('admin.obat-keluar.delete');
+            });
+
+            // petugas
+            Route::prefix('petugas')->group(function () {
+                Route::get('/', [PetugasAdminController::class, 'index'])->name('admin.petugas');
+                Route::post('/create', [PetugasAdminController::class, 'create'])->name('admin.petugas.create');
+                Route::post('/update', [PetugasAdminController::class, 'update'])->name('admin.petugas.update');
+                Route::delete('/delete/{id}', [PetugasAdminController::class, 'delete'])->name('admin.petugas.delete');
             });
         });
     });

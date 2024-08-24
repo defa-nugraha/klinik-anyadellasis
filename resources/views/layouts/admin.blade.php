@@ -65,7 +65,7 @@
             </li>
             
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/rekam_medis*') ? 'active' : '' }}" href="{{route('admin.rekam_medis')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-file-medical"></i>
                 </span>
@@ -80,7 +80,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/obat*') ? 'active' : '' }}" href="{{route('admin.obat')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-pills"></i>
                 </span>
@@ -98,7 +98,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/obat-keluar*') ? 'active' : '' }}" href="{{route('admin.obat-keluar')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-prescription-bottle-alt"></i>
                 </span>
@@ -113,7 +113,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/petugas*') ? 'active' : '' }}" href="{{route('admin.petugas')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-users"></i>
                 </span>
@@ -122,7 +122,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/dokter*') ? 'active' : '' }}" href="{{route('admin.dokter')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-stethoscope"></i>
                 </span>
@@ -131,7 +131,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/jadwal-dokter*') ? 'active' : '' }}" href="{{route('admin.jadwal-dokter')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-calendar-check"></i>
                 </span>
@@ -140,7 +140,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/poli*') ? 'active' : '' }}" href="{{route('admin.poli')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-hospital-user"></i>
                 </span>
