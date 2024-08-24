@@ -42,7 +42,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('admin.dashboard')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -56,7 +56,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/pasien*') ? 'active' : '' }}" href="{{route('admin.pasien')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-user-injured"></i>
                 </span>

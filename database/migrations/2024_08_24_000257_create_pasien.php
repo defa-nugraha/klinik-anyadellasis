@@ -19,7 +19,12 @@ return new class extends Migration
             $table->string('alamat')->nullable();
             $table->string('no_hp')->nullable();
             $table->string('no_bpjs')->nullable();
+            $table->string('no_rm')->nullable();
             $table->string('alergi')->nullable();
+            $table->string('agama')->nullable();
+            $table->string('pendidikan')->nullable();
+            $table->string('pekerjaan')->nullable();
+            $table->enum('jenis_pembayaran', ['umum/mandiri', 'jaminan kesahatan'])->nullable();
             $table->enum('gender', ['laki-laki', 'perempuan'])->nullable();
             $table->enum('status_menikah', ['menikah', 'belum menikah', 'duda', 'janda'])->nullable();
             $table->timestamps();
