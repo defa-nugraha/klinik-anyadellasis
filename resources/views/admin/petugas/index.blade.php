@@ -6,6 +6,7 @@
         <x-input-type type="text" name="name" label="Nama" required="true"/>
         <x-input-type type="email" name="email" label="Email" required="true"/>
         <x-input-type type="text" name="no_hp" label="No HP" required="true"/>
+        <x-input-type type="file" name="foto" label="Foto (optional)" required=""/>
         <x-select name="role" label="Role" required="true">
             <option value="admin">Admin</option>
             <option value="doctor">Dokter</option>
@@ -24,6 +25,7 @@
             <th>Email</th>
             <th>No Hp</th>
             <th>Role</th>
+            <th>Foto</th>
             <th>Alamat</th>
             <th></th>
         </thead>
@@ -46,6 +48,9 @@
                             <span class="badge bg-muted">pasien</span>
                         @endif
                     </td>
+                    <td>
+                        <img src="{{asset('img/profil/'.$p->foto)}}" class="rounded" width="100px" alt="">
+                    </td>
                     <td>{{ $p->alamat }}</td>
                     <td>
                         <x-actions id="{{ $p->id }}" routeDelete="{{route('admin.petugas.delete', encryptStr($p->id))}}" routeEdit="{{route('admin.petugas.update')}}">
@@ -53,6 +58,7 @@
                             <x-input-type-value value="{{$p->name}}" type="text" name="name" label="Nama" required="true"/>
                             <x-input-type-value value="{{$p->email}}" type="email" name="email" label="Email" required="true"/>
                             <x-input-type-value value="{{$p->no_hp}}" type="text" name="no_hp" label="No HP" required="true"/>
+                            <x-input-type type="file" name="foto" label="Foto (optional)" required=""/>
                             <x-select name="role" label="Role" required="true">
                                 <option value="admin" {{$p->role == 'admin' ? 'selected' : ''}}>Admin</option>
                                 <option value="doctor" {{$p->role == 'doctor' ? 'selected' : ''}}>Dokter</option>

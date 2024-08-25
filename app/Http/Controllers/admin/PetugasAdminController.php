@@ -13,7 +13,7 @@ class PetugasAdminController extends Controller
     function index()
     {
         $data = [
-            'petugas' => User::orderBy('role', 'asc')->get()
+            'petugas' => User::whereNot('role', 'patient')->orderBy('role', 'asc')->get()
         ];
 
         return view('admin.petugas.index', $data);
@@ -37,6 +37,13 @@ class PetugasAdminController extends Controller
             'password' => Hash::make($request->email),
             'role' => $request->role
         ];
+
+        if ($request->hasFile('foto')) {
+            $filename = time() . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->move('img/profil/', $filename);
+
+            $data['foto'] = $filename;
+        }
 
         $create = User::create($data);
 
@@ -67,6 +74,13 @@ class PetugasAdminController extends Controller
             'password' => Hash::make($request->email),
             'role' => $request->role
         ];
+
+        if ($request->hasFile('foto')) {
+            $filename = time() . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->move('img/profil/', $filename);
+
+            $data['foto'] = $filename;
+        }
 
         $update = User::where('id', decryptStr($request->id))->update($data);
 
