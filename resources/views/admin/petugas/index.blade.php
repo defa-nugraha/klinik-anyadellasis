@@ -10,7 +10,6 @@
             <option value="admin">Admin</option>
             <option value="doctor">Dokter</option>
             <option value="nurse">Nurse</option>
-            <option value="patien">Pasien</option>
         </x-select>
         <label for="alamat">Alamat</label>
         <textarea name="alamat" id="alamat" cols="30" rows="3" class="form-control" required></textarea>
@@ -58,7 +57,6 @@
                                 <option value="admin" {{$p->role == 'admin' ? 'selected' : ''}}>Admin</option>
                                 <option value="doctor" {{$p->role == 'doctor' ? 'selected' : ''}}>Dokter</option>
                                 <option value="nurse" {{$p->role == 'nurse' ? 'selected' : ''}}>Nurse</option>
-                                <option value="patient" {{$p->role == 'patient' ? 'selected' : ''}}>Pasien</option>
                             </x-select>
                             <label for="alamat">Alamat</label>
                             <textarea name="alamat" id="alamat" cols="30" rows="3" class="form-control" required>{{$p->alamat}}</textarea>

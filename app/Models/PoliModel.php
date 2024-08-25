@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PoliModel extends Model
 {
     use HasFactory;
+
+    protected $table = 'poli';
+
+    protected $guarded = ['id'];
 }

@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class IstriModel extends Model
+class PemeriksaanModel extends Model
 {
     use HasFactory;
-    protected $table = 'istri';
+    protected $table = 'pemeriksaan';
 
     protected $guarded = ['id'];
 
-    public function pasien()
+    public function rekam_medis()
     {
-        return $this->belongsTo(PasienModel::class, 'id_pasien', 'id');
+        return $this->belongsTo(RekamMedisModel::class, 'id_rekam_medis', 'id');
     }
 }
