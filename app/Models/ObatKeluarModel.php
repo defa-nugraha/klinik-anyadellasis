@@ -16,4 +16,14 @@ class ObatKeluarModel extends Model
     {
         return $this->belongsTo(ObatModel::class, 'id_obat', 'id');
     }
+
+    public function pasien()
+    {
+        return $this->belongsTo(PasienModel::class, 'id_pasien', 'id');
+    }
+
+    public function rekam_medis()
+    {
+        return $this->belongsTo(RekamMedisModel::class, 'id_rekam_medis', 'id');
+    }
 }
