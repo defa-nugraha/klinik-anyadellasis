@@ -37,7 +37,7 @@
                         <select name="jenis_pembayaran" id="jenis_pembayaran" class="form-select" required>
                             <option value="" selected disabled>--Pilih--</option>
                             <option value="umum/mandiri">Umum/Mandiri</option>
-                            <option value="jeminan kesehatan">Jaminan Kesehatan</option>
+                            <option value="jaminan kesehatan">Jaminan Kesehatan</option>
                         </select>
 
                         <x-input-type type="text" name="pekerjaan" label="Pekerjaan" required='' />

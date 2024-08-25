@@ -1,5 +1,5 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{$id}}">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{$id}}">
     <i class="fa fa-eye"></i>
   </button>
   

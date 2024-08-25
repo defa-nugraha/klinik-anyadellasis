@@ -109,20 +109,57 @@ class PasienAdminController extends Controller
         return redirect('/admin/pasien');
     }
 
+    function edit($id)
+    {
+        $pasien = PasienModel::find(decryptStr($id));
+        $gender = ($pasien) ? ($pasien->gender) : null;
+        $status_menikah = ($pasien) ? ($pasien->status_menikah) : null;
+        $data = [
+            'pasien' => $pasien,
+            'users' => User::all(),
+        ];
+
+        if ($gender == 'laki-laki' && $status_menikah == 'menikah') {
+            $data['suamiIstri'] = IstriModel::where('id_pasien', $pasien->id)->first();
+        } elseif ($gender == 'perempuan' && $status_menikah == 'menikah') {
+            $data['suamiIstri'] = SuamiModel::where('id_pasien', $pasien->id)->first();
+        } else {
+            $data['suamiIstri'] = false;
+        }
+        // dd($data);
+        if (!$pasien) {
+            Alert::error('Pasien tidak ditemukan');
+            return redirect('/admin/pasien');
+        }
+
+        return view('admin.pasien.edit', $data);
+    }
+
     function update(Request $request)
     {
         $request->validate([
             'id' => 'required',
-            'id_user' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'no_hp' => 'required',
             'gender' => 'required',
-            'status_menikah' => 'required'
+            'status_menikah' => 'required',
+            'email' => 'required',
+            'no_hp' => 'required'
         ]);
 
+        $dataUser = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat,
+            'password' => Hash::make($request->email)
+        ];
+
+        $user = User::where('id', decryptStr($request->user))->update($dataUser);
+
         $data = [
-            'id_user' => decryptStr($request->id_user),
+            'id_user' => decryptStr($request->id),
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
             'alamat' => $request->alamat,
@@ -130,10 +167,43 @@ class PasienAdminController extends Controller
             'no_bpjs' => $request->no_bpjs,
             'alergi' => $request->alergi,
             'gender' => $request->gender,
+            'no_rm' => $request->no_rm,
+            'agama' => $request->agama,
+            'pendidikan' => $request->pendidikan,
+            'pekerjaan' => $request->pekerjaan,
+            'jenis_pembayaran' => $request->jenis_pembayaran,
             'status_menikah' => $request->status_menikah,
         ];
 
         $create = PasienModel::where('id', decryptStr($request->id))->update($data);
+
+        if ($request->status_menikah == 'menikah') {
+            $request->validate([
+                'nama_ss' => 'required',
+                'no_bpjs_ss' => 'required',
+                'pekerjaan_ss' => 'required',
+                'pendidikan_ss' => 'required',
+                'tempat_lahir_ss' => 'required',
+                'tanggal_lahir_ss' => 'required',
+            ]);
+
+            $dataSuamiIstri = [
+                'id_pasien' => decryptStr($request->id),
+                'nama' => $request->nama_ss,
+                'no_bpjs' => $request->no_bpjs_ss,
+                'no_hp' => $request->no_hp_ss,
+                'pekerjaan' => $request->pekerjaan_ss,
+                'pendidikan' => $request->pendidikan_ss,
+                'tempat_lahir' => $request->tempat_lahir_ss,
+                'tanggal_lahir' => $request->tanggal_lahir_ss
+            ];
+
+            if ($request->gender == 'laki-laki') {
+                IstriModel::where('id', decryptStr($request->suami_istri))->update($dataSuamiIstri);
+            } elseif ($request->gender == 'perempuan') {
+                SuamiModel::where('id', decryptStr($request->suami_istri))->update($dataSuamiIstri);
+            }
+        }
 
         if ($create) {
             Alert::success('Pasien diupdate!');
@@ -141,7 +211,7 @@ class PasienAdminController extends Controller
             Alert::error('Pasien gagal diupdate!');
         }
 
-        return redirect()->back();
+        return redirect('/admin/pasien');
     }
 
     function delete($id)

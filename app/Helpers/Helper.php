@@ -18,15 +18,39 @@ function clearDot($string)
     return str_replace('.', '', $string);
 }
 
+function salt()
+{
+    return md5('digitalpelajar.com-');
+}
+
 function encryptStr($string)
 {
-    return Crypt::encryptString($string);
+    try {
+        return Crypt::encryptString(salt() . $string);
+    } catch (\Throwable $th) {
+        //throw $th;
+        return 0;
+    }
 }
 
 function decryptStr($string)
 {
-    return Crypt::decryptString($string);
+    try {
+        // Dekripsi string terlebih dahulu
+        $decrypted = Crypt::decryptString($string);
+
+        // Hapus salt dari hasil dekripsi
+        if (substr($decrypted, 0, strlen(salt())) === salt()) {
+            return substr($decrypted, strlen(salt()));
+        } else {
+            return 0; // Salt tidak cocok
+        }
+    } catch (\Throwable $th) {
+        //throw $th;
+        return 0;
+    }
 }
+
 
 function convertTime($timestamp)
 {

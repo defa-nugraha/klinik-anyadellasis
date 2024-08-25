@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
                 Route::get('/', [PasienAdminController::class, 'index'])->name('admin.pasien');
                 Route::get('/create', [PasienAdminController::class, 'create'])->name('admin.pasien.create');
                 Route::post('/store', [PasienAdminController::class, 'store'])->name('admin.pasien.store');
+                Route::get('/{id}', [PasienAdminController::class, 'edit'])->name('admin.pasien.edit');
+                Route::get('/detail/{id}', [PasienAdminController::class, 'detail'])->name('admin.pasien.detail');
                 Route::post('/update', [PasienAdminController::class, 'update'])->name('admin.pasien.update');
                 Route::delete('/delete/{id}', [PasienAdminController::class, 'delete'])->name('admin.pasien.delete');
             });
