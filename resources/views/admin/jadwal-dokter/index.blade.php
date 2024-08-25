@@ -4,7 +4,7 @@
         <x-tambah-data action="{{route('admin.jadwal-dokter.create')}}" >
             <x-select name="id_dokter" label="Dokter" required="true">
                 @foreach($dokter as $d)
-                    <option value="{{$d->id}}">{{$d->name}}</option>
+                    <option value="{{$d->id}}">{{$d->user->name}}</option>
                 @endforeach
             </x-select>
 
@@ -44,9 +44,11 @@
                         <td>{{$j->jam_selesai}}</td>
                         <td>
                             <x-actions id="{{$j->id}}" routeDelete="{{route('admin.jadwal-dokter.delete', encryptStr($j->id))}}" routeEdit="{{route('admin.jadwal-dokter.update')}}">
+                                <input type="hidden" name="id" value="{{encryptStr($j->id)}}">
+                                
                                 <x-select name="id_dokter" label="Dokter" required="true">
                                     @foreach($dokter as $d)
-                                        <option value="{{$d->id}}" {{$j->id_dokter == $d->id ? 'selected' : ''}}>{{$d->name}}</option>
+                                        <option value="{{$d->id}}" {{$j->id_dokter == $d->id ? 'selected' : ''}}>{{$d->user->name}}</option>
                                     @endforeach
                                 </x-select>
                     
