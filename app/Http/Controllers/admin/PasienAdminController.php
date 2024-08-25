@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\IstriModel;
 use App\Models\PasienModel;
+use App\Models\SuamiModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -70,13 +72,41 @@ class PasienAdminController extends Controller
 
         $create = PasienModel::create($data);
 
+        if ($request->status_menikah == 'menikah') {
+            $request->validate([
+                'nama_ss' => 'required',
+                'no_bpjs_ss' => 'required',
+                'pekerjaan_ss' => 'required',
+                'pendidikan_ss' => 'required',
+                'tempat_lahir_ss' => 'required',
+                'tanggal_lahir_ss' => 'required',
+            ]);
+
+            $dataSuamiIstri = [
+                'id_pasien' => $create->id,
+                'nama' => $request->nama_ss,
+                'no_bpjs' => $request->no_bpjs_ss,
+                'no_hp' => $request->no_hp_ss,
+                'pekerjaan' => $request->pekerjaan_ss,
+                'pendidikan' => $request->pendidikan_ss,
+                'tempat_lahir' => $request->tempat_lahir_ss,
+                'tanggal_lahir' => $request->tanggal_lahir_ss
+            ];
+
+            if ($request->gender == 'laki-laki') {
+                IstriModel::create($dataSuamiIstri);
+            } elseif ($request->gender == 'perempuan') {
+                SuamiModel::create($dataSuamiIstri);
+            }
+        }
+
         if ($create) {
             Alert::success('Pasien ditambahkan!');
         } else {
             Alert::error('Pasien gagal ditambahkan!');
         }
 
-        return redirect()->back();
+        return redirect('/admin/pasien');
     }
 
     function update(Request $request)

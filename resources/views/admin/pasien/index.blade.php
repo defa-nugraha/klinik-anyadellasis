@@ -26,6 +26,8 @@
                             <dd>{{ $p->user->name }}</dd>
                             <dt>No Hp</dt>
                             <dd>{{ $p->user->no_hp }}</dd>
+                            <dt>No RM</dt>
+                            <dd>{{ $p->no_rm }}</dd>
                         </dl>
                     </td>
                     <td>{{ $p->tempat_lahir }}, {{ $p->tanggal_lahir }}</td>
