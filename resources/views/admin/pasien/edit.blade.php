@@ -80,39 +80,38 @@
                     </div>
                 </div>
                 <hr>
-                @if($suamiIstri)
-                    <input type="hidden" name="suami_istri" value="{{encryptStr($suamiIstri->id)}}">
-                    <div class="suami-istri">
-                        <h3 id="title">Data {{$pasien->gender == 'laki-laki' ? 'Istri' : 'Suami'}}</h3>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-12">
-                                <x-input-type-value value="{{$suamiIstri->nama}}" type="text" name="nama_ss" label="Nama" required='' />
-                                <x-input-type-value value="{{$suamiIstri->tempat_lahir}}" type="text" name="tempat_lahir_ss" label="Tempat Lahir" required='' />
-                                <x-input-type-value value="{{$suamiIstri->tanggal_lahir}}" type="date" name="tanggal_lahir_ss" label="Tanggal Lahir" required='' />
-                                <x-input-type-value value="{{$suamiIstri->pekerjaan}}" type="text" name="pekerjaan_ss" label="Pekerjaan" required='' />
-                                
-                            </div>
+                <div class="suami-istri" style="display: {{(!$suamiIstri) ? 'none' : ''}}">
+                    <input type="hidden" name="suami_istri" value="{{($suamiIstri) ? encryptStr($suamiIstri->id) : ''}}">
+                    <h3 id="title">Data {{$pasien->gender == 'laki-laki' ? 'Istri' : 'Suami'}}</h3>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-12">
+                            <x-input-type-value value="{{($suamiIstri) ? $suamiIstri->nama : ''}}" type="text" name="nama_ss" label="Nama" required='' />
+                            <x-input-type-value value="{{$suamiIstri ? $suamiIstri->tempat_lahir : ''}}" type="text" name="tempat_lahir_ss" label="Tempat Lahir" required='' />
+                            <x-input-type-value value="{{$suamiIstri ? $suamiIstri->tanggal_lahir: ''}}" type="date" name="tanggal_lahir_ss" label="Tanggal Lahir" required='' />
+                            <x-input-type-value value="{{$suamiIstri ? $suamiIstri->pekerjaan : ''}}" type="text" name="pekerjaan_ss" label="Pekerjaan" required='' />
                             
-                            <div class="col-md-6 col-lg-6 col-12">
-                                <x-input-type-value value="{{$suamiIstri->no_bpjs}}" type="text" name="no_bpjs_ss" label="No. BPJS/KTP" required='' />
-                                <x-input-type-value value="{{$suamiIstri->no_hp}}" type="text" name="no_hp_ss" label="No. HP" required='' />
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-6 col-12">
+                            <x-input-type-value value="{{$suamiIstri ? $suamiIstri->no_bpjs : ''}}" type="text" name="no_bpjs_ss" label="No. BPJS/KTP" required='' />
+                            <x-input-type-value value="{{$suamiIstri ? $suamiIstri->no_hp : ''}}" type="text" name="no_hp_ss" label="No. HP" required='' />
+                            
+                            <label for="pendidikan">Pendidikan*</label>
+                            <select name="pendidikan_ss" id="pendidikan" class="form-select">
+                                <option value="" selected disabled>--Pilih--</option>
+                                <option value="SD" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'SD' ? 'selected' : '' }}>SD</option>
+                                <option value="SMP/Sederajat" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'SMP/Sederajat' ? 'selected' : '' }}>SMP/Sederajat</option>
+                                <option value="SMA/Sederajat" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'SMA/Sederajat' ? 'selected' : '' }}>SMA/Sederajat</option>
+                                <option value="Diploma" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'Diploma' ? 'selected' : '' }}>Diploma</option>
+                                <option value="S1/Sederajat" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'S1/Sederajat' ? 'selected' : '' }}>S1/Sederajat</option>
+                                <option value="S2/Sederajat" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'S2/Sederajat' ? 'selected' : '' }}>S2/Sederajat</option>
+                                <option value="S3/Sederajat" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'S3/Sederajat' ? 'selected' : '' }}>S3/Sederajat</option>
+                                <option value="Tidak Sekolah" {{ ($suamiIstri) && $suamiIstri->pendidikan == 'Tidak Sekolah' ? 'selected' : '' }}>Tidak Sekolah</option>
+                            </select>
                                 
-                                <label for="pendidikan">Pendidikan*</label>
-                                <select name="pendidikan_ss" id="pendidikan" class="form-select">
-                                    <option value="" selected disabled>--Pilih--</option>
-                                    <option value="SD" {{$suamiIstri->pendidikan == 'SD' ? 'selected' : ''}}>SD</option>
-                                    <option value="SMP/Sederajat" {{$suamiIstri->pendidikan == 'SMP/Sederajat' ? 'selected' : ''}}>SMP/Sederajat</option>
-                                    <option value="SMA/Sederajat" {{$suamiIstri->pendidikan == 'SMA/Sederajat' ? 'selected' : ''}}>SMA/Sederajat</option>
-                                    <option value="Diploma" {{$suamiIstri->pendidikan == 'Diploma' ? 'selected' : ''}}>Diploma</option>
-                                    <option value="S1/Sederajat" {{$suamiIstri->pendidikan == 'S1/Sederajat' ? 'selected' : ''}}>S1/Sederajat</option>
-                                    <option value="S2/Sederajat" {{$suamiIstri->pendidikan == 'S2/Sederajat' ? 'selected' : ''}}>S2/Sederajat</option>
-                                    <option value="S3/Sederajat" {{$suamiIstri->pendidikan == 'S3/Sederajat' ? 'selected' : ''}}>S3/Sederajat</option>
-                                    <option value="Tidak Sekolah" {{$suamiIstri->pendidikan == 'Tidak Sekolah' ? 'selected' : ''}}>Tidak Sekolah</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
-                @endif
+                </div>
                 <button class="btn btn-primary mt-3">SIMPAN</button>
             </form>
         </div>

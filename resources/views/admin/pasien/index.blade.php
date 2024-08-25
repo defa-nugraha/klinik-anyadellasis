@@ -44,7 +44,7 @@
                     <td>
                         <div class="row">
                             <div class="col-auto p-2">
-                                <a href="{{route('admin.pasien.detail', encryptStr($p->id))}}" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                <a href="{{route('admin.rekam_medis.detail', encryptStr($p->id))}}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                             </div>
                             <div class="col-auto p-2">
                                 <a href="{{route('admin.pasien.edit', encryptStr($p->id))}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>

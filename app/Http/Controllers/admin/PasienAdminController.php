@@ -199,9 +199,9 @@ class PasienAdminController extends Controller
             ];
 
             if ($request->gender == 'laki-laki') {
-                IstriModel::where('id', decryptStr($request->suami_istri))->update($dataSuamiIstri);
+                IstriModel::updateOrCreate(['id' => decryptStr($request->suami_istri)], $dataSuamiIstri);
             } elseif ($request->gender == 'perempuan') {
-                SuamiModel::where('id', decryptStr($request->suami_istri))->update($dataSuamiIstri);
+                SuamiModel::updateOrCreate(['id' => decryptStr($request->suami_istri)], $dataSuamiIstri);
             }
         }
 

@@ -35,7 +35,6 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [PasienAdminController::class, 'create'])->name('admin.pasien.create');
                 Route::post('/store', [PasienAdminController::class, 'store'])->name('admin.pasien.store');
                 Route::get('/{id}', [PasienAdminController::class, 'edit'])->name('admin.pasien.edit');
-                Route::get('/detail/{id}', [PasienAdminController::class, 'detail'])->name('admin.pasien.detail');
                 Route::post('/update', [PasienAdminController::class, 'update'])->name('admin.pasien.update');
                 Route::delete('/delete/{id}', [PasienAdminController::class, 'delete'])->name('admin.pasien.delete');
             });
@@ -93,6 +92,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/', [RekamMedisAdminController::class, 'index'])->name('admin.rekam_medis');
                 Route::post('/create', [RekamMedisAdminController::class, 'create'])->name('admin.rekam_medis.create');
                 Route::post('/update', [RekamMedisAdminController::class, 'update'])->name('admin.rekam_medis.update');
+                Route::get('/detail/{id}', [RekamMedisAdminController::class, 'detail'])->name('admin.rekam_medis.detail');
                 Route::delete('/delete/{id}', [RekamMedisAdminController::class, 'delete'])->name('admin.rekam_medis.delete');
             });
 
