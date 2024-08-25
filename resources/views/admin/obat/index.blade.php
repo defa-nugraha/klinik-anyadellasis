@@ -2,6 +2,7 @@
 @section('content')
     <div class="mb-3">
         <x-tambah-data action="{{route('admin.obat.create')}}" >
+            <x-input-type type="text" name="kode" label="Kode Obat" required="true"/>
             <x-input-type type="text" name="nama" label="Nama Obat" required="true"/>
             <x-input-type type="text" name="satuan" label="Satuan" required="true"/>
             <x-input-type type="number" name="stok" label="Stok" required="true"/>
@@ -17,6 +18,7 @@
         <x-table>
             <thead>
                 <th>No</th>
+                <th>Kode</th>
                 <th>Obat</th>
                 <th>Satuan</th>
                 <th>Stok</th>
@@ -29,6 +31,7 @@
                 @foreach($obat as $o)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td><span class="badge bg-warning">{{ $o->kode }}</span></td>
                         <td>{{ $o->nama }}</td>
                         <td>{{ $o->satuan }}</td>
                         <td>{{ $o->stok }}</td>
@@ -37,6 +40,7 @@
                         <td>
                             <x-actions id="{{$o->id}}" routeDelete="{{route('admin.obat.delete', encryptStr($o->id))}}" routeEdit="{{route('admin.obat.update')}}">
                                 <input type="hidden" name="id" value="{{encryptStr($o->id)}}">
+                                <x-input-type-value value="{{$o->kode}}" type="text" name="kode" label="Kode Obat" required="true"/>
                                 <x-input-type-value value="{{$o->nama}}" type="text" name="nama" label="Nama Obat" required="true"/>
                                 <x-input-type-value value="{{$o->satuan}}" type="text" name="satuan" label="Satuan" required="true"/>
                                 <x-input-type-value value="{{$o->stok}}" type="number" name="stok" label="Stok" required="true"/>

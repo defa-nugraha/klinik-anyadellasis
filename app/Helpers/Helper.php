@@ -50,16 +50,6 @@ function namaRole($id)
     }
 }
 
-function hitungAngsuran($id_angrsuran)
-{
-    $angsuran = AngsuranModel::find($id_angrsuran);
-    if (!$angsuran) {
-        return false;
-    }
-    $dataAngsuran = AngsuranModel::where('id_pembelian', $angsuran->id_pembelian)->get();
-    return $dataAngsuran->count();
-}
-
 // generate random string
 function generateRandomString($length = 10)
 {

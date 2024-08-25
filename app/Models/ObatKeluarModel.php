@@ -11,4 +11,9 @@ class ObatKeluarModel extends Model
     protected $table = 'obat_keluar';
 
     protected $guarded = ['id'];
+
+    public function obat()
+    {
+        return $this->belongsTo(ObatModel::class, 'id_obat', 'id');
+    }
 }

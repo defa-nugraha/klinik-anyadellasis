@@ -80,7 +80,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link {{ Request::is('admin/obat*') ? 'active' : '' }}" href="{{route('admin.obat')}}" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/obat') ? 'active' : '' }}" href="{{route('admin.obat')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-pills"></i>
                 </span>

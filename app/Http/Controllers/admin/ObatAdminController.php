@@ -21,6 +21,7 @@ class ObatAdminController extends Controller
     function create(Request $request)
     {
         $request->validate([
+            'kode' => 'required',
             'nama' => 'required',
             'satuan' => 'required',
             'stok' => 'required',
@@ -29,6 +30,7 @@ class ObatAdminController extends Controller
         ]);
 
         $data = [
+            'kode' => $request->kode,
             'nama' => $request->nama,
             'satuan' => $request->satuan,
             'stok' => $request->stok,
@@ -50,6 +52,7 @@ class ObatAdminController extends Controller
     {
         $request->validate([
             'id' => 'required',
+            'kode' => 'required',
             'nama' => 'required',
             'satuan' => 'required',
             'stok' => 'required',
@@ -58,6 +61,7 @@ class ObatAdminController extends Controller
         ]);
 
         $data = [
+            'kode' => $request->kode,
             'nama' => $request->nama,
             'satuan' => $request->satuan,
             'stok' => $request->stok,
