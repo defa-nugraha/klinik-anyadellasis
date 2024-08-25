@@ -37,6 +37,16 @@ class DokterAdminController extends Controller
         ];
 
         $create = DokterModel::create($data);
+
+        if ($request->hasFile('foto')) {
+            $filename = time() . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->move('img/dokter/', $filename);
+
+            // update foto user
+            $user = User::find(decryptStr($request->user));
+            $user->foto = $filename;
+            $user->save();
+        }
         if ($create) {
             Alert::success('Dokter berhasil ditambahkan');
         } else {
@@ -61,11 +71,22 @@ class DokterAdminController extends Controller
             'spesialis' => $request->spesialis
         ];
 
-        $create = DokterModel::where('id', decryptStr($request->id))->update($data);
-        if ($create) {
-            Alert::success('Dokter berhasil ditambahkan');
+        $update = DokterModel::where('id', decryptStr($request->id))->update($data);
+
+        if ($request->hasFile('foto')) {
+            $filename = time() . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->move('img/profil/', $filename);
+
+            // update foto user
+            $user = User::find(decryptStr($request->user));
+            $user->foto = $filename;
+            $user->save();
+        }
+
+        if ($update) {
+            Alert::success('Dokter berhasil diupdate');
         } else {
-            Alert::error('Dokter gagal ditambahkan');
+            Alert::error('Dokter gagal diupdate');
         }
 
         return redirect()->back();

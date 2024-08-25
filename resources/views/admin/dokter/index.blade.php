@@ -14,6 +14,7 @@
             </x-select>
 
             <x-input-type type="text" name="spesialis" label="Spesialisasi" required="true"/>
+            <x-input-type type="file" name="foto" label="Foto" required=""/>
         </x-tambah-data>
     </div>
 
@@ -62,6 +63,7 @@
                                 </x-select>
                     
                                 <x-input-type-value value="{{$d->spesialis}}" type="text" name="spesialis" label="Spesialisasi" required="true"/>
+                                <x-input-type type="file" name="foto" label="Foto" required=""/>
                             </x-actions>
                         </td>
                     </tr>
