@@ -90,7 +90,9 @@ Route::middleware('auth')->group(function () {
             // rekam_medis
             Route::prefix('rekam_medis')->group(function () {
                 Route::get('/', [RekamMedisAdminController::class, 'index'])->name('admin.rekam_medis');
-                Route::post('/create', [RekamMedisAdminController::class, 'create'])->name('admin.rekam_medis.create');
+                Route::get('/create', [RekamMedisAdminController::class, 'create'])->name('admin.rekam_medis.create');
+                Route::post('/store', [RekamMedisAdminController::class, 'store'])->name('admin.rekam_medis.store');
+                Route::get('/edit', [RekamMedisAdminController::class, 'edit'])->name('admin.rekam_medis.edit');
                 Route::post('/update', [RekamMedisAdminController::class, 'update'])->name('admin.rekam_medis.update');
                 Route::get('/detail/{id}', [RekamMedisAdminController::class, 'detail'])->name('admin.rekam_medis.detail');
                 Route::delete('/delete/{id}', [RekamMedisAdminController::class, 'delete'])->name('admin.rekam_medis.delete');
