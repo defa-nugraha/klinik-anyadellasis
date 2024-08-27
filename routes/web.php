@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\JadwalDokterAdminController;
 use App\Http\Controllers\admin\ObatAdminController;
 use App\Http\Controllers\admin\ObatKeluarAdminController;
 use App\Http\Controllers\admin\PasienAdminController;
+use App\Http\Controllers\admin\PemeriksaanAdminController;
 use App\Http\Controllers\admin\PendaftaranAdminController;
 use App\Http\Controllers\admin\PetugasAdminController;
 use App\Http\Controllers\admin\PoliAdminController;
@@ -39,10 +40,18 @@ Route::middleware('auth')->group(function () {
                 Route::delete('/delete/{id}', [PasienAdminController::class, 'delete'])->name('admin.pasien.delete');
             });
 
+            // pemeriksaan
+            Route::prefix('pemeriksaan')->group(function () {
+                Route::get('/', [PemeriksaanAdminController::class, 'index'])->name('admin.pemeriksaan');
+                Route::post('/createOrUpdate', [PemeriksaanAdminController::class, 'createOrUpdate'])->name('admin.pemeriksaan.createOrUpdate');
+                Route::post('/update', [PemeriksaanAdminController::class, 'update'])->name('admin.pemeriksaan.update');
+                Route::delete('/delete/{id}', [PemeriksaanAdminController::class, 'delete'])->name('admin.pemeriksaan.delete');
+            });
+
             // diagnosa
             Route::prefix('diagnosa')->group(function () {
                 Route::get('/', [DiagnosaAdminController::class, 'index'])->name('admin.diagnosa');
-                Route::post('/create', [DiagnosaAdminController::class, 'create'])->name('admin.diagnosa.create');
+                Route::post('/createOrUpdate', [DiagnosaAdminController::class, 'createOrUpdate'])->name('admin.diagnosa.createOrUpdate');
                 Route::post('/update', [DiagnosaAdminController::class, 'update'])->name('admin.diagnosa.update');
                 Route::delete('/delete/{id}', [DiagnosaAdminController::class, 'delete'])->name('admin.diagnosa.delete');
             });
@@ -109,7 +118,7 @@ Route::middleware('auth')->group(function () {
             // tindakan
             Route::prefix('tindakan')->group(function () {
                 Route::get('/', [TindakanAdminController::class, 'index'])->name('admin.tindakan');
-                Route::post('/create', [TindakanAdminController::class, 'create'])->name('admin.tindakan.create');
+                Route::post('/createOrUpdate', [TindakanAdminController::class, 'createOrUpdate'])->name('admin.tindakan.createOrUpdate');
                 Route::post('/update', [TindakanAdminController::class, 'update'])->name('admin.tindakan.update');
                 Route::delete('/delete/{id}', [TindakanAdminController::class, 'delete'])->name('admin.tindakan.delete');
             });
