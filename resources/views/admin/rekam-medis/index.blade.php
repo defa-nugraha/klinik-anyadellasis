@@ -57,7 +57,7 @@
                             <div class="row">
                                 <div class="col-auto p-2">
                                     <a href="{{route('admin.rekam_medis.detail', encryptStr($item->pasien->id))}}" class="btn btn-info">
-                                        <i class="fas fa-eye"></i>
+                                        <i class="fas fa-user-md"></i>
                                     </a>
                                 </div>
                             </div>

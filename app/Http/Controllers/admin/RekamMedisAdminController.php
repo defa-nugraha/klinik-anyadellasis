@@ -18,7 +18,7 @@ class RekamMedisAdminController extends Controller
     function index()
     {
         $data = [
-            'rekamMedis' => RekamMedisModel::all()
+            'rekamMedis' => RekamMedisModel::orderBy('created_at', 'desc')->get(),
         ];
 
         return view('admin.rekam-medis.index', $data);
@@ -42,8 +42,11 @@ class RekamMedisAdminController extends Controller
 
         $data = [
             'pasien' => $pasien,
-            'rekamMedis' => RekamMedisModel::where('id_pasien', $pasien->id)->get(),
+            'rekamMedis' => RekamMedisModel::where('id_pasien', $pasien->id)->orderBy('id', 'desc')->get(),
+            'statusRekamMedis' => RekamMedisModel::whereNot('status', 'selesai')->orderBy('created_at', 'desc')->first(),
         ];
+
+        // dd($data);
         if ($gender == 'laki-laki' && $status_menikah == 'menikah') {
             $data['suamiIstri'] = IstriModel::where('id_pasien', $pasien->id)->first();
         } elseif ($gender == 'perempuan' && $status_menikah == 'menikah') {
@@ -69,6 +72,13 @@ class RekamMedisAdminController extends Controller
             'poli' => 'required',
             'dokter' => 'required',
         ]);
+
+        // cek apakah ada rekam medis yang belum selesai?
+        $cek = RekamMedisModel::where('id_pasien', $request->pasien)->whereNot('status', 'selesai')->first();
+        if ($cek) {
+            Alert::error('Pasien ini masih belum selesai periksa, harap selesaikan pemeriksaan sebelumnya!');
+            return redirect()->back();
+        }
 
         $data = [
             'kandungan' => $request->kandungan,
@@ -106,5 +116,33 @@ class RekamMedisAdminController extends Controller
         }
 
         return redirect('admin/rekam_medis');
+    }
+
+    function updateStatus(Request $request)
+    {
+        $request->validate([
+            'rekam_medis' => "required",
+            'status' => 'required'
+        ]);
+
+        $rekamMedis = RekamMedisModel::find(decryptStr($request->rekam_medis));
+
+        if ($rekamMedis) {
+            if ($request->status == 'pemeriksaan' && !$rekamMedis->id_pemeriksaan) {
+                Alert::error('Isi pemeriksaan terlebih dahulu!');
+                return redirect()->back();
+            } elseif ($request->status == 'di apotek' && !$rekamMedis->id_diagnosa && !$rekamMedis->id_tindakan) {
+                Alert::error('Tindakan dan diagnosa belum diisi!');
+                return redirect()->back();
+            }
+            $rekamMedis->status = $request->status;
+            $rekamMedis->save();
+
+            Alert::success('Rekam Medis berhasil diupdate!');
+        } else {
+            Alert::error('Rekam Medis tidak ditemukan!');
+        }
+
+        return redirect()->back();
     }
 }

@@ -105,6 +105,7 @@ Route::middleware('auth')->group(function () {
                 Route::post('/update', [RekamMedisAdminController::class, 'update'])->name('admin.rekam_medis.update');
                 Route::get('/detail/{id}', [RekamMedisAdminController::class, 'detail'])->name('admin.rekam_medis.detail');
                 Route::delete('/delete/{id}', [RekamMedisAdminController::class, 'delete'])->name('admin.rekam_medis.delete');
+                Route::get('/update-status', [RekamMedisAdminController::class, 'updateStatus'])->name('admin.rekam_medis.update-status');
             });
 
             // rekam_medis_kandungan
