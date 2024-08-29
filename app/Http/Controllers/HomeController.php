@@ -31,7 +31,7 @@ class HomeController extends Controller
             return redirect()->route('admin.dashboard');
         } elseif ($role == 'doctor') {
             // dokter
-            return redirect()->route('doctor.dashboard');
+            return redirect()->route('dokter.dashboard');
         } elseif ($role == 'nurse') {
             // nurse
             return redirect()->route('nurse.dashboard');

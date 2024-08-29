@@ -17,6 +17,11 @@ use App\Http\Controllers\admin\RekamMedisAdminController;
 use App\Http\Controllers\admin\RekamMedisKandunganAdminController;
 use App\Http\Controllers\admin\SuamiAdminController;
 use App\Http\Controllers\admin\TindakanAdminController;
+use App\Http\Controllers\dokter\DashboardDokterController;
+use App\Http\Controllers\dokter\ObatDokterController;
+use App\Http\Controllers\dokter\ObatKeluarDokterController;
+use App\Http\Controllers\dokter\RekamMedisDokterController;
+use App\Http\Controllers\dokter\RekamMedisKandunganDokterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingPageController;
 use App\Models\PendaftaranModel;
@@ -169,6 +174,77 @@ Route::middleware('auth')->group(function () {
                 Route::post('/update', [AntrianAdminController::class, 'update'])->name('admin.antrian.update');
                 Route::delete('/delete/{id}', [AntrianAdminController::class, 'delete'])->name('admin.antrian.delete');
                 Route::get('/proses/{id}', [AntrianAdminController::class, 'proses'])->name('admin.antrian.proses');
+            });
+        });
+
+
+        Route::prefix('dokter')->group(function () {
+            Route::get('/', [DashboardDokterController::class, 'index'])->name('dokter.dashboard');
+            Route::get('/profil', [DashboardAdminController::class, 'index'])->name('dokter.profil');
+
+            // pemeriksaan
+            Route::prefix('pemeriksaan')->group(function () {
+                Route::get('/', [PemeriksaanAdminController::class, 'index'])->name('dokter.pemeriksaan');
+                Route::post('/createOrUpdate', [PemeriksaanAdminController::class, 'createOrUpdate'])->name('dokter.pemeriksaan.createOrUpdate');
+                Route::post('/update', [PemeriksaanAdminController::class, 'update'])->name('dokter.pemeriksaan.update');
+                Route::delete('/delete/{id}', [PemeriksaanAdminController::class, 'delete'])->name('dokter.pemeriksaan.delete');
+            });
+
+            // diagnosa
+            Route::prefix('diagnosa')->group(function () {
+                Route::get('/', [DiagnosaAdminController::class, 'index'])->name('dokter.diagnosa');
+                Route::post('/createOrUpdate', [DiagnosaAdminController::class, 'createOrUpdate'])->name('dokter.diagnosa.createOrUpdate');
+                Route::post('/update', [DiagnosaAdminController::class, 'update'])->name('dokter.diagnosa.update');
+                Route::delete('/delete/{id}', [DiagnosaAdminController::class, 'delete'])->name('dokter.diagnosa.delete');
+            });
+
+            // rekam_medis
+            Route::prefix('rekam_medis')->group(function () {
+                Route::get('/', [RekamMedisDokterController::class, 'index'])->name('dokter.rekam_medis');
+                Route::get('/create', [RekamMedisDokterController::class, 'create'])->name('dokter.rekam_medis.create');
+                Route::get('/create/{id_antrian}', [RekamMedisDokterController::class, 'createFromAntrian'])->name('dokter.rekam_medis.createFromAntrian');
+                Route::post('/store', [RekamMedisDokterController::class, 'store'])->name('dokter.rekam_medis.store');
+                Route::get('/edit', [RekamMedisDokterController::class, 'edit'])->name('dokter.rekam_medis.edit');
+                Route::post('/update', [RekamMedisDokterController::class, 'update'])->name('dokter.rekam_medis.update');
+                Route::get('/detail/{id}', [RekamMedisDokterController::class, 'detail'])->name('dokter.rekam_medis.detail');
+                Route::delete('/delete/{id}', [RekamMedisDokterController::class, 'delete'])->name('dokter.rekam_medis.delete');
+                Route::get('/update-status', [RekamMedisDokterController::class, 'updateStatus'])->name('dokter.rekam_medis.update-status');
+            });
+
+            // rekam_medis_kandungan
+            Route::prefix('rekam_medis_kandungan')->group(function () {
+                Route::get('/', [RekamMedisKandunganDokterController::class, 'index'])->name('dokter.rekam_medis_kandungan');
+                Route::post('/create', [RekamMedisKandunganDokterController::class, 'create'])->name('dokter.rekam_medis_kandungan.create');
+                Route::post('/update', [RekamMedisKandunganDokterController::class, 'update'])->name('dokter.rekam_medis_kandungan.update');
+                Route::delete('/delete/{id}', [RekamMedisKandunganDokterController::class, 'delete'])->name('dokter.rekam_medis_kandungan.delete');
+            });
+
+            // tindakan
+            Route::prefix('tindakan')->group(function () {
+                Route::get('/', [TindakanAdminController::class, 'index'])->name('dokter.tindakan');
+                Route::post('/createOrUpdate', [TindakanAdminController::class, 'createOrUpdate'])->name('dokter.tindakan.createOrUpdate');
+                Route::post('/update', [TindakanAdminController::class, 'update'])->name('dokter.tindakan.update');
+                Route::delete('/delete/{id}', [TindakanAdminController::class, 'delete'])->name('dokter.tindakan.delete');
+            });
+
+            // obat
+            Route::prefix('obat')->group(function () {
+                Route::get('/', [ObatDokterController::class, 'index'])->name('dokter.obat');
+                Route::post('/create', [ObatDokterController::class, 'create'])->name('dokter.obat.create');
+                Route::post('/update', [ObatDokterController::class, 'update'])->name('dokter.obat.update');
+                Route::delete('/delete/{id}', [ObatDokterController::class, 'delete'])->name('dokter.obat.delete');
+                Route::get('/resep/{id}', [ObatDokterController::class, 'createResep'])->name('dokter.obat.resep.create');
+                Route::get('/resep', [ObatDokterController::class, 'resep'])->name('dokter.obat.resep');
+                Route::post('/resep/store', [ObatDokterController::class, 'storeResep'])->name('dokter.obat.storeResep');
+            });
+
+            // obat-keluar
+            Route::prefix('obat-keluar')->group(function () {
+                Route::get('/', [ObatKeluarDokterController::class, 'index'])->name('dokter.obat-keluar');
+                Route::post('/create', [ObatKeluarDokterController::class, 'create'])->name('dokter.obat-keluar.create');
+                Route::post('/update', [ObatKeluarDokterController::class, 'update'])->name('dokter.obat-keluar.update');
+                Route::delete('/delete/{id}', [ObatKeluarDokterController::class, 'delete'])->name('dokter.obat-keluar.delete');
+                Route::get('/detail/{id}', [ObatKeluarDokterController::class, 'detail'])->name('dokter.obat-keluar.detail');
             });
         });
     });
