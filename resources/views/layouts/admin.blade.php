@@ -63,6 +63,15 @@
                 <span class="hide-menu">Pasien</span>
               </a>
             </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ Request::is('admin/antrian*') ? 'active' : '' }}" href="{{route('admin.antrian')}}" aria-expanded="false">
+                <span>
+                  <i class="fa fa-user-clock"></i>
+                </span>
+                <span class="hide-menu">Antrian</span>
+              </a>
+            </li>
             
             <li class="sidebar-item">
               <a class="sidebar-link {{ Request::is('admin/rekam_medis*') ? 'active' : '' }}" href="{{route('admin.rekam_medis')}}" aria-expanded="false">
@@ -166,15 +175,19 @@
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-            {{-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link nav-icon-hover" href="javascript:void(0)">
                 <i class="ti ti-bell-ringing"></i>
                 <div class="notification bg-primary rounded-circle"></div>
               </a>
-            </li> --}}
+            </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+              <li class="nav-item">
+                <span>Hai, <strong>{{ Auth::user()->name }}</strong></span>
+              </li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -194,6 +207,8 @@
                   </div>
                 </div>
               </li>
+
+              
             </ul>
           </div>
         </nav>

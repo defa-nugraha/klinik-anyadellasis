@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\AntrianModel;
 use App\Models\DokterModel;
 use App\Models\IstriModel;
 use App\Models\PasienModel;
@@ -144,5 +145,23 @@ class RekamMedisAdminController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    function createFromAntrian($id_antrian)
+    {
+        $antrian = AntrianModel::find(decryptStr($id_antrian));
+        if (!$antrian) {
+            Alert::error('Antrian tidak ditemukan!');
+            return redirect()->back();
+        }
+
+        $data = [
+            'pasien' => PasienModel::find($antrian->id_pasien),
+            'poli' => PoliModel::all(),
+            'dokter' => DokterModel::all(),
+            'antrian' => $antrian
+        ];
+
+        return view('admin.rekam-medis.create-from-antrian', $data);
     }
 }

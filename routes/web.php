@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AntrianAdminController;
 use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\DiagnosaAdminController;
 use App\Http\Controllers\admin\DokterAdminController;
@@ -100,6 +101,7 @@ Route::middleware('auth')->group(function () {
             Route::prefix('rekam_medis')->group(function () {
                 Route::get('/', [RekamMedisAdminController::class, 'index'])->name('admin.rekam_medis');
                 Route::get('/create', [RekamMedisAdminController::class, 'create'])->name('admin.rekam_medis.create');
+                Route::get('/create/{id_antrian}', [RekamMedisAdminController::class, 'createFromAntrian'])->name('admin.rekam_medis.createFromAntrian');
                 Route::post('/store', [RekamMedisAdminController::class, 'store'])->name('admin.rekam_medis.store');
                 Route::get('/edit', [RekamMedisAdminController::class, 'edit'])->name('admin.rekam_medis.edit');
                 Route::post('/update', [RekamMedisAdminController::class, 'update'])->name('admin.rekam_medis.update');
@@ -158,6 +160,15 @@ Route::middleware('auth')->group(function () {
                 Route::post('/create', [PetugasAdminController::class, 'create'])->name('admin.petugas.create');
                 Route::post('/update', [PetugasAdminController::class, 'update'])->name('admin.petugas.update');
                 Route::delete('/delete/{id}', [PetugasAdminController::class, 'delete'])->name('admin.petugas.delete');
+            });
+
+            // antrian
+            Route::prefix('antrian')->group(function () {
+                Route::get('/', [AntrianAdminController::class, 'index'])->name('admin.antrian');
+                Route::post('/create', [AntrianAdminController::class, 'create'])->name('admin.antrian.create');
+                Route::post('/update', [AntrianAdminController::class, 'update'])->name('admin.antrian.update');
+                Route::delete('/delete/{id}', [AntrianAdminController::class, 'delete'])->name('admin.antrian.delete');
+                Route::get('/proses/{id}', [AntrianAdminController::class, 'proses'])->name('admin.antrian.proses');
             });
         });
     });
