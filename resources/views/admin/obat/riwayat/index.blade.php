@@ -19,11 +19,18 @@
                         <td>
                             <ul>
                                 <li>{{ $o->pasien->user->name }}</li>
-                                @if($o->pasien->jenis_pembayaran == 'jaminan kesehatan')
-                                    <span class="badge bg-success">{{ $o->pasien->jenis_pembayaran }}</span>
-                                @else 
-                                    <span class="badge bg-warning">{{ $o->pasien->jenis_pembayaran }}</span>
-                                @endif
+                                <li>
+                                    @if($o->pasien->jenis_pembayaran == 'jaminan kesehatan')
+                                        <span class="badge bg-success">{{ $o->pasien->jenis_pembayaran }}</span>
+                                    @else 
+                                        <span class="badge bg-warning">{{ $o->pasien->jenis_pembayaran }}</span>
+                                    @endif
+                                </li>
+                                <li>
+                                    <a href="{{route('admin.obat-keluar.detail', encryptStr($o->id_rekam_medis))}}">
+                                        Lihat Riwayat Obat
+                                    </a>
+                                </li>
                             </ul>
                         </td>
                         <td>{{ $o->created_at->format('d-m-Y H:i:s') }}</td>
