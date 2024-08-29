@@ -35,7 +35,7 @@
                         </td>
                         <td>{{ $o->created_at->format('d-m-Y H:i:s') }}</td>
                         <td>{{ $o->obat->nama }}</td>
-                        <td>{{ $o->jumlah }}</td>
+                        <td>{{ $o->jumlah }} {{ $o->obat->satuan }}</td>
                         <td>{{ formatRupiah($o->harga) }}</td>
                         <td>{{ formatRupiah($o->harga * $o->jumlah) }}</td>
                     </tr>
