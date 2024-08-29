@@ -125,7 +125,12 @@
                                     <dd>{!! $item->pemeriksaan->deskripsi !!}</dd>
                                     <dt>File Pemeriksaan</dt>
                                     <dd>
-                                        <a href="{{asset('file/pemeriksaan/'.$item->pemeriksaan->file_pemeriksaan)}}" target="_blank">Lihat</a>
+                                        @if($item->pemeriksaan->file_pemeriksaan)
+                                            <a href="{{asset('file/pemeriksaan/'.$item->pemeriksaan->file_pemeriksaan)}}" target="_blank">Lihat</a>
+                                        @else
+                                            -
+                                        @endif
+                                        
                                     </dd>
                                 </dl>
                                 @else
@@ -139,7 +144,12 @@
                                     <dd>{!! $item->diagnosa->deskripsi !!}</dd>
                                     <dt>File Diagnosa</dt>
                                     <dd>
-                                        <a href="{{asset('file/diagnosa/'.$item->diagnosa->file_diagnosa)}}" target="_blank">Lihat</a>
+                                        @if($item->diagnosa->file_diagnosa)
+                                            <a href="{{asset('file/diagnosa/'.$item->diagnosa->file_diagnosa)}}" target="_blank">Lihat</a>
+                                        @else
+                                            -
+                                        @endif
+                                        
                                     </dd>
                                 </dl>
                                 @else
@@ -153,7 +163,12 @@
                                     <dd>{!! $item->tindakan->deskripsi !!}</dd>
                                     <dt>File Tindakan</dt>
                                     <dd>
-                                        <a href="{{asset('file/tindakan/'.$item->tindakan->file_tindakan)}}" target="_blank">Lihat</a>
+                                        @if($item->tindakan->file_tindakan)
+                                            <a href="{{asset('file/tindakan/'.$item->tindakan->file_tindakan)}}" target="_blank">Lihat</a>
+                                        @else
+                                            -
+                                        @endif
+                                        
                                     </dd>
                                 </dl>
                                 @else

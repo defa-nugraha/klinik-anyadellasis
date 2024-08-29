@@ -89,7 +89,7 @@
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/pasien" aria-expanded="false">
+              <a class="sidebar-link {{ Request::is('admin/obat/resep*') ? 'active' : '' }}" href="{{route('admin.obat.resep')}}" aria-expanded="false">
                 <span>
                   <i class="fa fa-prescription-bottle-alt"></i>
                 </span>

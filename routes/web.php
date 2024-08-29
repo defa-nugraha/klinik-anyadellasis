@@ -138,6 +138,9 @@ Route::middleware('auth')->group(function () {
                 Route::post('/create', [ObatAdminController::class, 'create'])->name('admin.obat.create');
                 Route::post('/update', [ObatAdminController::class, 'update'])->name('admin.obat.update');
                 Route::delete('/delete/{id}', [ObatAdminController::class, 'delete'])->name('admin.obat.delete');
+                Route::get('/resep/{id}', [ObatAdminController::class, 'createResep'])->name('admin.obat.resep.create');
+                Route::get('/resep', [ObatAdminController::class, 'resep'])->name('admin.obat.resep');
+                Route::post('/resep/store', [ObatAdminController::class, 'storeResep'])->name('admin.obat.storeResep');
             });
 
             // obat-keluar
@@ -146,6 +149,7 @@ Route::middleware('auth')->group(function () {
                 Route::post('/create', [ObatKeluarAdminController::class, 'create'])->name('admin.obat-keluar.create');
                 Route::post('/update', [ObatKeluarAdminController::class, 'update'])->name('admin.obat-keluar.update');
                 Route::delete('/delete/{id}', [ObatKeluarAdminController::class, 'delete'])->name('admin.obat-keluar.delete');
+                Route::get('/detail/{id}', [ObatKeluarAdminController::class, 'detail'])->name('admin.obat-keluar.detail');
             });
 
             // petugas
