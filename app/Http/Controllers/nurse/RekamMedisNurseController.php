@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\dokter;
+namespace App\Http\Controllers\nurse;
 
 use App\Http\Controllers\Controller;
 use App\Models\AntrianModel;
@@ -12,26 +12,17 @@ use App\Models\RekamMedisKandunganModel;
 use App\Models\RekamMedisModel;
 use App\Models\SuamiModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class RekamMedisDokterController extends Controller
+class RekamMedisNurseController extends Controller
 {
     function index()
     {
-        $dokter = DokterModel::where('id_user', Auth::user()->id)->first();
-        $rekamMedis = RekamMedisModel::where([
-            'id_dokter' => $dokter->id,
-        ])
-            ->whereNot('status', 'antrian')
-            ->orderBy('tgl_pemeriksaan', 'desc')
-            ->get();
-
         $data = [
-            'rekamMedis' => $rekamMedis
+            'rekamMedis' => RekamMedisModel::orderBy('created_at', 'desc')->get(),
         ];
 
-        return view('dokter.rekam-medis.index', $data);
+        return view('nurse.rekam-medis.index', $data);
     }
 
     function create()
@@ -42,7 +33,7 @@ class RekamMedisDokterController extends Controller
             'dokter' => DokterModel::all()
         ];
 
-        return view('dokter.rekam-medis.create', $data);
+        return view('nurse.rekam-medis.create', $data);
     }
     function detail($id)
     {
@@ -65,7 +56,7 @@ class RekamMedisDokterController extends Controller
             $data['suamiIstri'] = false;
         }
 
-        return view('dokter.rekam-medis.detail', $data);
+        return view('nurse.rekam-medis.detail', $data);
     }
 
     function store(Request $request)
@@ -125,7 +116,7 @@ class RekamMedisDokterController extends Controller
             Alert::error('Rekam Medis gagal ditambahkan!');
         }
 
-        return redirect('admin/rekam_medis');
+        return redirect('nurse/rekam_medis');
     }
 
     function updateStatus(Request $request)
@@ -171,6 +162,6 @@ class RekamMedisDokterController extends Controller
             'antrian' => $antrian
         ];
 
-        return view('dokter.rekam-medis.create-from-antrian', $data);
+        return view('nurse.rekam-medis.create-from-antrian', $data);
     }
 }
