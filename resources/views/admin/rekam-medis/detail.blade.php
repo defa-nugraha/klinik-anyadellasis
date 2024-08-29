@@ -269,7 +269,7 @@
                                         </div>
                                     </div>
                                 @else  
-                                    <a href="" class="btn btn-sm btn-success">
+                                    <a href="{{route('admin.obat-keluar.detail', encryptStr($item->id))}}" class="btn btn-sm btn-success">
                                         <i class="fa fa-eye"></i> Obat
                                     </a>
                                 @endif
