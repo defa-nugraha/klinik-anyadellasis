@@ -35,6 +35,8 @@ use App\Http\Controllers\nurse\PasienNurseController;
 use App\Http\Controllers\nurse\RekamMedisNurseController;
 use App\Http\Controllers\pasien\DashboardPasienController;
 use App\Http\Controllers\pasien\PasienController;
+use App\Http\Controllers\pasien\PendaftaranLayananController;
+use App\Http\Controllers\pasien\RekamMedisController;
 use App\Models\PendaftaranModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -388,6 +390,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [DashboardPasienController::class, 'index'])->name('pasien.dashboard');
         Route::get('/profil', [DashboardPasienController::class, 'profil'])->name('pasien.profil');
         Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.pasien.store');
+
+        Route::prefix('riwayat')->group(function () {
+            Route::get('pendaftaran', [PendaftaranLayananController::class, 'index'])->name('pasien.pendaftaran');
+            Route::get('rekam-medis', [RekamMedisController::class, 'index'])->name('pasien.rekam-medis');
+        });
     });
 });
 

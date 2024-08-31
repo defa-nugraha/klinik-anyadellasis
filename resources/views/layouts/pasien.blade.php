@@ -50,6 +50,28 @@
               </a>
             </li>
 
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Layanan</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ Request::is('riwayat/pendaftaran*') ? 'active' : '' }}" href="{{route('pasien.pendaftaran')}}" aria-expanded="false">
+                <span>
+                  <i class="fa fa-clipboard"></i>
+                </span>
+                <span class="hide-menu">Pendaftaran Layanan</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ Request::is('riwayat/rekam-medis*') ? 'active' : '' }}" href="{{route('pasien.rekam-medis')}}" aria-expanded="false">
+                <span>
+                  <i class="fa fa-stethoscope"></i>
+                </span>
+                <span class="hide-menu">Rekam Medis</span>
+              </a>
+            </li>
+
             <!-- End Sidebar navigation -->
       </div>
       <!-- End Sidebar scroll-->
