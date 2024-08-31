@@ -33,6 +33,8 @@ use App\Http\Controllers\nurse\ObatKeluarNurseController;
 use App\Http\Controllers\nurse\ObatNurseController;
 use App\Http\Controllers\nurse\PasienNurseController;
 use App\Http\Controllers\nurse\RekamMedisNurseController;
+use App\Http\Controllers\pasien\DashboardPasienController;
+use App\Http\Controllers\pasien\PasienController;
 use App\Models\PendaftaranModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -383,7 +385,9 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware('user')->group(function () {
-        Route::prefix('client')->group(function () {});
+        Route::get('/dashboard', [DashboardPasienController::class, 'index'])->name('pasien.dashboard');
+        Route::get('/profil', [DashboardPasienController::class, 'profil'])->name('pasien.profil');
+        Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.pasien.store');
     });
 });
 

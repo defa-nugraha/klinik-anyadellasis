@@ -230,7 +230,7 @@
                                 <button type="submit" class="btn btn-blue text-center">Login</button>
                             </div>
                             <div class="row mb-4 px-3">
-                                <small class="font-weight-bold">Belum punya akun? <a class="text-danger ">Daftar</a></small>
+                                <small class="font-weight-bold">Belum punya akun? <a class="text-danger"  href="/register">Daftar</a></small>
                             </div>
                         </div>
                     </div>
