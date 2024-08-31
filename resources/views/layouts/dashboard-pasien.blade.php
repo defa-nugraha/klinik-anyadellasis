@@ -195,9 +195,9 @@
                 <div class="col-md-6 col-lg-6 col-12 d-flex justify-content-md-end mt-3 mt-md-0">
                     <div class="row">
                         <div class="col-auto">
-                            <a href="#" class="btn btn-primary mb-2 mb-md-0">
+                            <button class="btn btn-primary mb-2 mb-md-0" data-bs-toggle="modal" data-bs-target="#pendaftaranLayanan">
                                 <i class="fa fa-clipboard-list"></i> Daftar Antrian
-                            </a>
+                            </button>
                         </div>
             
                         <div class="col-auto d-none d-md-block">
@@ -218,6 +218,37 @@
             <x-tab/>
 
             @yield('dashboard-content')
+        </div>
+    </div>
+
+    <div class="modal fade" id="pendaftaranLayanan" tabindex="-1" aria-labelledby="pendaftaranLayananLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pendaftaranLayananLabel">Pendaftaran Layanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('pasien.pendaftaran.create')}}" method="post">
+                        @csrf
+                        <label for="name" class="form-label">Nama Pasien</label>
+                        <input type="text" class="form-control" id="name" value="{{Auth::user()->name}}" disabled>
+                        <x-select name="poli" label="Poli" required="true">
+                            @foreach($poli as $p)
+                                <option value="{{encryptStr($p->id)}}">{{$p->name}}</option>
+                            @endforeach
+                        </x-select>
+                        <x-select name="dokter" label="Dokter" required="true">
+                            @foreach($dokter as $d)
+                                <option value="{{encryptStr($d->id)}}">{{$d->user->name}}</option>
+                            @endforeach
+                        </x-select>
+                        <x-input-type-value type="date" label="Tanggal Periksa" value="{{date('Y-m-d')}}" name="tanggal_periksa" required="true"/>
+                        
+                        <button class="mt-2 btn btn-primary">Buat Antrian</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -393,6 +393,7 @@ Route::middleware('auth')->group(function () {
 
         Route::prefix('riwayat')->group(function () {
             Route::get('pendaftaran', [PendaftaranLayananController::class, 'index'])->name('pasien.pendaftaran');
+            Route::post('pendaftaran/create', [PendaftaranLayananController::class, 'create'])->name('pasien.pendaftaran.create');
             Route::get('rekam-medis', [RekamMedisController::class, 'index'])->name('pasien.rekam-medis');
         });
     });
