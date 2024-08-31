@@ -38,6 +38,9 @@ class HomeController extends Controller
         } elseif ($role == 'patient') {
             // patient
             return redirect()->route('patient.dashboard');
+        } elseif ($role == 'apotek') {
+            // apotek
+            return redirect()->route('apotek.dashboard');
         }
 
         return redirect()->route('login');

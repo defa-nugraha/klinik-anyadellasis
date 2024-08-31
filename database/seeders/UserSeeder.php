@@ -42,6 +42,13 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('zxasqw12'),
                 'role' => 'patient',
                 'alamat' => 'Jl. Pemuda'
+            ],
+            [
+                'name' => 'I Rosiana',
+                'email' => 'apotek@gmail.com',
+                'password' => Hash::make('zxasqw12'),
+                'role' => 'apotek',
+                'alamat' => 'Jl. Pemuda'
             ]
         ];
         User::query()->insert($users);

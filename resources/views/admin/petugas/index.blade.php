@@ -11,6 +11,7 @@
             <option value="admin">Admin</option>
             <option value="doctor">Dokter</option>
             <option value="nurse">Nurse</option>
+            <option value="apotek">Apoteker</option>
         </x-select>
         <label for="alamat">Alamat</label>
         <textarea name="alamat" id="alamat" cols="30" rows="3" class="form-control" required></textarea>
@@ -44,8 +45,8 @@
                             <span class="badge bg-success">{{ $p->role }}</span>
                         @elseif($p->role == 'nurse')
                             <span class="badge bg-primary">{{ $p->role }}</span>
-                        @elseif($p->role == 'patient')
-                            <span class="badge bg-muted">pasien</span>
+                        @elseif($p->role == 'apotek')
+                            <span class="badge bg-muted">{{ $p->role }}</span>
                         @endif
                     </td>
                     <td>
@@ -63,6 +64,7 @@
                                 <option value="admin" {{$p->role == 'admin' ? 'selected' : ''}}>Admin</option>
                                 <option value="doctor" {{$p->role == 'doctor' ? 'selected' : ''}}>Dokter</option>
                                 <option value="nurse" {{$p->role == 'nurse' ? 'selected' : ''}}>Nurse</option>
+                                <option value="apotek" {{$p->role == 'apotek' ? 'selected' : ''}}>Apoteker</option>
                             </x-select>
                             <label for="alamat">Alamat</label>
                             <textarea name="alamat" id="alamat" cols="30" rows="3" class="form-control" required>{{$p->alamat}}</textarea>

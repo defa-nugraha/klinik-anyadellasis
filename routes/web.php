@@ -17,6 +17,9 @@ use App\Http\Controllers\admin\RekamMedisAdminController;
 use App\Http\Controllers\admin\RekamMedisKandunganAdminController;
 use App\Http\Controllers\admin\SuamiAdminController;
 use App\Http\Controllers\admin\TindakanAdminController;
+use App\Http\Controllers\apotek\DashboardApotekController;
+use App\Http\Controllers\apotek\ObatApotekController;
+use App\Http\Controllers\apotek\ObatKeluarApotekController;
 use App\Http\Controllers\dokter\DashboardDokterController;
 use App\Http\Controllers\dokter\ObatDokterController;
 use App\Http\Controllers\dokter\ObatKeluarDokterController;
@@ -349,6 +352,32 @@ Route::middleware('auth')->group(function () {
                 Route::post('/update', [AntrianNurseController::class, 'update'])->name('nurse.antrian.update');
                 Route::delete('/delete/{id}', [AntrianNurseController::class, 'delete'])->name('nurse.antrian.delete');
                 Route::get('/proses/{id}', [AntrianNurseController::class, 'proses'])->name('nurse.antrian.proses');
+            });
+        });
+
+
+        Route::prefix('apotek')->group(function () {
+            Route::get('/', [DashboardApotekController::class, 'index'])->name('apotek.dashboard');
+            Route::get('/profil', [DashboardApotekController::class, 'profil'])->name('apotek.profil');
+
+            // obat
+            Route::prefix('obat')->group(function () {
+                Route::get('/', [ObatApotekController::class, 'index'])->name('apotek.obat');
+                Route::post('/create', [ObatApotekController::class, 'create'])->name('apotek.obat.create');
+                Route::post('/update', [ObatApotekController::class, 'update'])->name('apotek.obat.update');
+                Route::delete('/delete/{id}', [ObatApotekController::class, 'delete'])->name('apotek.obat.delete');
+                Route::get('/resep/{id}', [ObatApotekController::class, 'createResep'])->name('apotek.obat.resep.create');
+                Route::get('/resep', [ObatApotekController::class, 'resep'])->name('apotek.obat.resep');
+                Route::post('/resep/store', [ObatApotekController::class, 'storeResep'])->name('apotek.obat.storeResep');
+            });
+
+            // obat-keluar
+            Route::prefix('obat-keluar')->group(function () {
+                Route::get('/', [ObatKeluarApotekController::class, 'index'])->name('apotek.obat-keluar');
+                Route::post('/create', [ObatKeluarApotekController::class, 'create'])->name('apotek.obat-keluar.create');
+                Route::post('/update', [ObatKeluarApotekController::class, 'update'])->name('apotek.obat-keluar.update');
+                Route::delete('/delete/{id}', [ObatKeluarApotekController::class, 'delete'])->name('apotek.obat-keluar.delete');
+                Route::get('/detail/{id}', [ObatKeluarApotekController::class, 'detail'])->name('apotek.obat-keluar.detail');
             });
         });
     });

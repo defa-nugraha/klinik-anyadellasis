@@ -23,6 +23,8 @@ class AdminMiddleware
             return $next($request);
         } elseif (Auth::check() && Auth::user()->role === 'nurse') {
             return $next($request);
+        } elseif (Auth::check() && Auth::user()->role === 'apotek') {
+            return $next($request);
         }
         // return $next($request);
         return response()->json([
