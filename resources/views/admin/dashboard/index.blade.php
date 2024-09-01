@@ -134,9 +134,9 @@
                                     <strong>Dokter:</strong> {{ $item->dokter->user->name }}
                                 </li>
                             </ul>
+                            <hr>
                             @endforeach
                         @endif
-                        <hr>
                     </div>
                 </div>
             </div>

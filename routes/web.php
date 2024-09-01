@@ -383,6 +383,7 @@ Route::middleware('auth')->group(function () {
                 Route::delete('/delete/{id}', [ObatKeluarApotekController::class, 'delete'])->name('apotek.obat-keluar.delete');
                 Route::get('/detail/{id}', [ObatKeluarApotekController::class, 'detail'])->name('apotek.obat-keluar.detail');
             });
+            Route::get('/update-status', [RekamMedisAdminController::class, 'updateStatus'])->name('apotek.rekam_medis.update-status');
         });
     });
 
