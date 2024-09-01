@@ -122,3 +122,22 @@ function tanggalIndonesia($tanggal, $cetak_hari = false)
     }
     return $tgl_indo;
 }
+
+function namaHariIndonesia($tanggal)
+{
+    $hari = [
+        'Minggu',
+        'Senin',
+        'Selasa',
+        'Rabu',
+        'Kamis',
+        'Jumat',
+        'Sabtu'
+    ];
+
+    $timestamp = strtotime($tanggal);
+
+    $indexHari = date('w', $timestamp);
+
+    return $hari[$indexHari];
+}

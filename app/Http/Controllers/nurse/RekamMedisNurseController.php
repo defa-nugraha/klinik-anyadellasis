@@ -44,7 +44,9 @@ class RekamMedisNurseController extends Controller
         $data = [
             'pasien' => $pasien,
             'rekamMedis' => RekamMedisModel::where('id_pasien', $pasien->id)->orderBy('id', 'desc')->get(),
-            'statusRekamMedis' => RekamMedisModel::whereNot('status', 'selesai')->orderBy('created_at', 'desc')->first(),
+            'statusRekamMedis' => RekamMedisModel::whereNot('status', 'selesai')
+                ->where('id_pasien', $pasien->id)
+                ->orderBy('created_at', 'desc')->first(),
         ];
 
         // dd($data);
