@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <i class="fa fa-file-medical" style="font-size: 40px"></i>
-                        <h1>{{ $permintaanObat->count() }}</h1>
+                        <h1>{{ $permintaanObat->where('tgl_pemeriksaan', date('Y-m-d'))->count() }}</h1>
                     </div>
                     <span>Total Permintaan Obat Hari Ini</span>
                 </div>
@@ -75,7 +75,7 @@
         <div class="col-md-12 col-lg-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title mb-3"><i class="fa fa-clipboard"></i> Perawatan Hari Ini</h5>
+                    <h5 class="card-title mb-3"><i class="fa fa-file-medical"></i> Permintaan Obat Hari Ini</h5>
         
                     <div class="row">
                         @if(!$permintaanObat)
