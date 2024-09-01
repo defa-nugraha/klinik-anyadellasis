@@ -87,7 +87,7 @@
 						Klinik kami berkomitmen menjaga kesehatan dan kebahagiaan Anda dengan layanan yang ramah dan penuh empati, karena kesejahteraan bersama adalah kunci kebahagiaan sejati.	
 					</p>
 					<div class="btn-container ">
-						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Daftar Sekarang <i class="icofont-simple-right ml-2  "></i></a>
+						<a href="{{route('login')}}" class="btn btn-main-2 btn-icon btn-round-full">Daftar Sekarang <i class="icofont-simple-right ml-2  "></i></a>
 					</div>
 				</div>
 			</div>
@@ -106,7 +106,7 @@
 						<span>24 Hours Service</span>
 						<h4 class="mb-3">Daftar Online</h4>
 						<p class="mb-4">Hemat waktu dan nikmati kemudahan layanan kesehatan dengan akses yang cepat dan praktis</p>
-						<a href="appoinment.html" class="btn btn-main btn-round-full">Daftar Sekarang</a>
+						<a href="{{route('login')}}" class="btn btn-main btn-round-full">Daftar Sekarang</a>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">

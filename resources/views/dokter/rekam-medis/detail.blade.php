@@ -89,7 +89,7 @@
                     @if($pasien->status_menikah == 'menikah')
                         <th>Riwayat Persalinan</th>
                     @endif
-                    <th style="min-width: 170px">Ammanesia (S)</th>
+                    <th style="min-width: 170px">Anamnesa (S)</th>
                     <th style="min-width: 170px">Pemeriksaan (O)</th>
                     <th style="min-width: 170px">Diagnosa (A)</th>
                     <th style="min-width: 170px">Tindakan (P)</th>
