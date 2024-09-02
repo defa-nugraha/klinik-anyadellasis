@@ -115,8 +115,11 @@
                                 <strong>Pemeriksaan: </strong> {!! ($rekamMedis->id_pemeriksaan) ? $rekamMedis->pemeriksaan->deskripsi : '-' !!}
                             </li>
                             <li>
-                                <strong>Diagnosa: </strong> {!!($rekamMedis->id_diagnosa) ? $rekamMedis->diagnosa->deskripsi : '-'!!}
+                                <strong>Diagnosa: </strong> <br>
+                                {{ getDiagnosa($rekamMedis->id_diagnosa)?:'-' }}
                             </li>
+                            <li><strong>Catatan (diagnosa)</strong>{!! $rekamMedis->diagnosa->deskripsi?:'-' !!}</li>
+
                             <li>
                                 <strong>Tindakan: </strong> {!!($rekamMedis->id_tindakan) ? $rekamMedis->tindakan->deskripsi : '-'!!}
                             </li>

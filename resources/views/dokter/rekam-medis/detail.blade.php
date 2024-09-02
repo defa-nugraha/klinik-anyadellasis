@@ -193,7 +193,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{route('admin.pemeriksaan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{route('dokter.pemeriksaan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <input type="hidden" name="rekam_medis" value="{{encryptStr($item->id)}}">
                                                                 <label for="pemeriksaan" class="form-label">Pemeriksaan*</label>
@@ -224,7 +224,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{route('admin.diagnosa.createOrUpdate')}}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{route('dokter.diagnosa.createOrUpdate')}}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <input type="hidden" name="rekam_medis" value="{{encryptStr($item->id)}}">
                                                                 <div class="mb-3">
@@ -299,7 +299,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{route('admin.tindakan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{route('dokter.tindakan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <input type="hidden" name="rekam_medis" value="{{encryptStr($item->id)}}">
                                                                 <label for="tindakan" class="form-label">Tindakan*</label>
@@ -317,7 +317,7 @@
                                         </div>
                                     </div>
                                 @else  
-                                    <a href="{{route('admin.obat-keluar.detail', encryptStr($item->id))}}" class="btn btn-sm btn-success">
+                                    <a href="{{route('dokter.obat-keluar.detail', encryptStr($item->id))}}" class="btn btn-sm btn-success">
                                         <i class="fa fa-eye"></i> Obat
                                     </a>
                                 @endif

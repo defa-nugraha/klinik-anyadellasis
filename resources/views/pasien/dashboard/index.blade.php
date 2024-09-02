@@ -89,11 +89,11 @@
                 </dd>
                 <dt>Diagnosa(A)</dt>
                 <dd>
-                    @if($rekamMedis->id_diagnosa)
-                        {!! $rekamMedis->diagnosa->deskripsi !!}
-                    @else 
-                        -
-                    @endif
+                    {{ getDiagnosa($rekamMedis->id_diagnosa)?:'-' }}
+                </dd>
+                <dt>Catatan (diagnosa)</dt>
+                <dd>
+                    {!! $rekamMedis->diagnosa->deskripsi?:'-' !!}
                 </dd>
                 <dt>Tindakan(P)</dt>
                 <dd>

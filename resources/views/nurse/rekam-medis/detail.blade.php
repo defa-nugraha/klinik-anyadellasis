@@ -137,7 +137,13 @@
                                 @if($item->id_diagnosa)
                                 <dl>
                                     <dt>Diagnosa</dt>
-                                    <dd>{!! $item->diagnosa->deskripsi !!}</dd>
+                                    <dd>
+                                        {{ getDiagnosa($item->id_diagnosa)?:'-' }}
+                                    </dd>
+                                    <dt>Catatan</dt>
+                                    <dd>
+                                        {!! $item->diagnosa->deskripsi?:'-' !!}
+                                    </dd>
                                     <dt>File Diagnosa</dt>
                                     <dd>
                                         @if($item->diagnosa->file_diagnosa)

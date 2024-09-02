@@ -18,20 +18,25 @@
                         <td>{{$r->tgl_pemeriksaan}}</td>
                         <td>
                             @if($r->id_diagnosa)
-                                <dl>
-                                    <dt>Diagnosa</dt>
-                                    <dd>{!! $r->diagnosa->deskripsi !!}</dd>
-                                    <dt>File Diagnosa</dt>
-                                    <dd>
-                                        @if($r->diagnosa)
-                                            @if($r->diagnosa->file_diagnosa)
-                                                <a href="{{asset('file/diagnosa/'.$r->diagnosa->file_diagnosa)}}" target="_blank">Lihat</a>
-                                            @else
-                                                -
-                                            @endif
-                                        @endif
-                                    </dd>
-                                </dl>
+                            <dl>
+                                <dt>Diagnosa</dt>
+                                <dd>
+                                    {{ getDiagnosa($r->id_diagnosa)?:'-' }}
+                                </dd>
+                                <dt>Catatan</dt>
+                                <dd>
+                                    {!! $r->diagnosa->deskripsi?:'-' !!}
+                                </dd>
+                                <dt>File Diagnosa</dt>
+                                <dd>
+                                    @if($r->diagnosa->file_diagnosa)
+                                        <a href="{{asset('file/diagnosa/'.$r->diagnosa->file_diagnosa)}}" target="_blank">Lihat</a>
+                                    @else
+                                        -
+                                    @endif
+                                    
+                                </dd>
+                            </dl>
                             @else
                                 -
                             @endif
