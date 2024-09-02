@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\AntrianModel;
 use App\Models\DokterModel;
+use App\Models\ICDModel;
 use App\Models\IstriModel;
 use App\Models\PasienModel;
 use App\Models\PoliModel;
@@ -40,6 +41,7 @@ class RekamMedisAdminController extends Controller
         $pasien = PasienModel::where('id', decryptStr($id))->first();
         $gender = ($pasien) ? ($pasien->gender) : null;
         $status_menikah = ($pasien) ? ($pasien->status_menikah) : null;
+        $icd = ICDModel::all();
 
         $data = [
             'pasien' => $pasien,
@@ -47,6 +49,7 @@ class RekamMedisAdminController extends Controller
             'statusRekamMedis' => RekamMedisModel::whereNot('status', 'selesai')
                 ->where('id_pasien', $pasien->id)
                 ->orderBy('created_at', 'desc')->first(),
+            'icd' => $icd
         ];
 
         // dd($data);

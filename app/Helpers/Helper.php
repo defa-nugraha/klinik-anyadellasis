@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\AngsuranModel;
+use App\Models\SubDiagnosaModel;
 use Illuminate\Support\Facades\Crypt;
 
 function formatRupiah($nilai, $rp = true)
@@ -140,4 +141,15 @@ function namaHariIndonesia($tanggal)
     $indexHari = date('w', $timestamp);
 
     return $hari[$indexHari];
+}
+
+function getDiagnosa($id_diagnosa, $code = false)
+{
+    $data = SubDiagnosaModel::where('id_diagnosa', $id_diagnosa)->get();
+    $diagnosa = '';
+    foreach ($data as $d) {
+        $diagnosa .= ($code) ? $d->icd->code . ', ' : $d->icd->category . ', ';
+    }
+
+    return $diagnosa;
 }

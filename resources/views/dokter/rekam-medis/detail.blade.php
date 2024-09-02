@@ -137,7 +137,13 @@
                                 @if($item->id_diagnosa)
                                 <dl>
                                     <dt>Diagnosa</dt>
-                                    <dd>{!! $item->diagnosa->deskripsi !!}</dd>
+                                    <dd>
+                                        {{ getDiagnosa($item->id_diagnosa)?:'-' }}
+                                    </dd>
+                                    <dt>Catatan</dt>
+                                    <dd>
+                                        {!! $item->diagnosa->deskripsi?:'-' !!}
+                                    </dd>
                                     <dt>File Diagnosa</dt>
                                     <dd>
                                         @if($item->diagnosa->file_diagnosa)
@@ -187,7 +193,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{route('dokter.pemeriksaan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{route('admin.pemeriksaan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <input type="hidden" name="rekam_medis" value="{{encryptStr($item->id)}}">
                                                                 <label for="pemeriksaan" class="form-label">Pemeriksaan*</label>
@@ -204,11 +210,12 @@
                                             </div>
                                         </div>
                                         <div class="col-auto p-2">
+                                            <!-- Tombol untuk membuka modal Diagnosa -->
                                             <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#modalDiagnosa{{$item->id}}">
                                                 <i class="fa fa-pencil"></i> Assessment
                                             </button>
 
-                                            <!-- Modal untuk isi diagnosa -->
+                                            <!-- Modal Diagnosa -->
                                             <div class="modal fade" id="modalDiagnosa{{$item->id}}" tabindex="-1" aria-labelledby="modalDiagnosa{{$item->id}}Label" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl">
                                                     <div class="modal-content">
@@ -217,21 +224,66 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{route('dokter.diagnosa.createOrUpdate')}}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{route('admin.diagnosa.createOrUpdate')}}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <input type="hidden" name="rekam_medis" value="{{encryptStr($item->id)}}">
-                                                                <label for="diagnosa" class="form-label">Diagnosa*</label>
-                                                                <textarea id="diagnosa-editor" name="diagnosa" class="form-control mb-3">{{($item->diagnosa) ? $item->diagnosa->deskripsi : ''}}</textarea>
+                                                                <div class="mb-3">
+                                                                    <label for="diagnosa" class="form-label">ICD</label>
+                                                                    <input type="text" class="form-control" placeholder="Pilih ICD" id="diagnosa" data-bs-toggle="modal" data-bs-target="#modalICD{{$item->id}}" data-bs-dismiss="modal">
+                                                                    <div id="icd" class="row mt-2">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="diagnosa-editor" class="form-label">Catatan</label>
+                                                                    <textarea id="diagnosa-editor" name="diagnosa" class="form-control mb-3">{{($item->diagnosa) ? $item->diagnosa->deskripsi : ''}}</textarea>
+                                                                </div>
                                                                 <div class="mt-3">
                                                                     <x-input-type type="file" name="file_diagnosa" label="File (optional)" required=""/>
                                                                 </div>
-
                                                                 <button class="btn btn-primary mt-3">SIMPAN</button>
                                                             </form>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <!-- Modal ICD -->
+                                            <div class="modal fade" id="modalICD{{$item->id}}" tabindex="-1" aria-labelledby="modalICDLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="modalICDLabel">Pilih ICD</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <x-table>
+                                                                <thead>
+                                                                    <th>Pilih</th>
+                                                                    <th>KODE</th>
+                                                                    <th>KATEGORI</th>
+                                                                    <th>DESKRIPSI</th>
+                                                                    <th>TYPE</th>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach($icd as $i)
+                                                                        <tr>
+                                                                            <td>
+                                                                                <button onclick="pilihICD(this)" data-id="{{encryptStr($i->id)}}" data-name="{{$i->code}} - {{$i->category}}" class="btn btn-primary" data-bs-target="#modalDiagnosa{{$item->id}}" data-bs-toggle="modal" data-bs-dismiss="modal">Pilih</button>
+                                                                            </td>
+                                                                            <td>{{$i->code}}</td>
+                                                                            <td>{{$i->category}}</td>
+                                                                            <td>{{$i->description}}</td>
+                                                                            <td>{{$i->type}}</td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </x-table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <div class="col-auto p-2">
                                             <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalTindakan{{$item->id}}">
@@ -247,7 +299,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{route('dokter.tindakan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{route('admin.tindakan.createOrUpdate')}}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <input type="hidden" name="rekam_medis" value="{{encryptStr($item->id)}}">
                                                                 <label for="tindakan" class="form-label">Tindakan*</label>
@@ -265,7 +317,7 @@
                                         </div>
                                     </div>
                                 @else  
-                                    <a href="{{route('dokter.obat-keluar.detail', encryptStr($item->id))}}" class="btn btn-sm btn-success">
+                                    <a href="{{route('admin.obat-keluar.detail', encryptStr($item->id))}}" class="btn btn-sm btn-success">
                                         <i class="fa fa-eye"></i> Obat
                                     </a>
                                 @endif
@@ -280,7 +332,23 @@
     
 @endsection
 
-
+<script>
+    function pilihICD(e){
+        let data = $(e).data();
+        let id = data.id;
+        let name = data.name;
+        
+        let icd = $('#icd');
+        icd.append(
+            `
+                <div class="col-3">
+                    <input type="text" class="form-control bg-primary text-white" value="${name}" readonly> 
+                    <input type="hidden" name="icd[]" class="form-control bg-primary text-white" value="${id}" readonly> 
+                </div>
+            `
+        );
+    }
+</script>
 
 <!-- Page Specific JS File -->
 <script type="importmap">
