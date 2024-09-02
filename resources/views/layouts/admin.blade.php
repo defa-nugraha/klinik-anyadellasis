@@ -158,6 +158,15 @@
               </a>
             </li>
 
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ Request::is('admin/icd*') ? 'active' : '' }}" href="{{route('admin.icd')}}" aria-expanded="false">
+                <span>
+                  <i class="fa fa-book-medical"></i>
+                </span>
+                <span class="hide-menu">ICD</span>
+              </a>
+            </li>
+
             
             
         <!-- End Sidebar navigation -->

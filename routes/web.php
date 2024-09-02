@@ -26,6 +26,7 @@ use App\Http\Controllers\dokter\ObatKeluarDokterController;
 use App\Http\Controllers\dokter\RekamMedisDokterController;
 use App\Http\Controllers\dokter\RekamMedisKandunganDokterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ICDController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\nurse\AntrianNurseController;
 use App\Http\Controllers\nurse\DashboardNurseController;
@@ -187,6 +188,14 @@ Route::middleware('auth')->group(function () {
                 Route::post('/update', [AntrianAdminController::class, 'update'])->name('admin.antrian.update');
                 Route::delete('/delete/{id}', [AntrianAdminController::class, 'delete'])->name('admin.antrian.delete');
                 Route::get('/proses/{id}', [AntrianAdminController::class, 'proses'])->name('admin.antrian.proses');
+            });
+
+            // ICD
+            Route::prefix('icd')->group(function () {
+                Route::get('/', [ICDController::class, 'index'])->name('admin.icd');
+                Route::post('/create', [ICDController::class, 'create'])->name('admin.icd.create');
+                Route::post('/update', [ICDController::class, 'update'])->name('admin.icd.update');
+                Route::delete('/delete/{id}', [ICDController::class, 'delete'])->name('admin.icd.delete');
             });
         });
 
