@@ -21,9 +21,9 @@ class UserMiddleware
             return $next($request);
         }
         // return $next($request);
-        // return redirect('/');
-        return response()->json([
-            'message' => 'Unauthenticated - user'
-        ], 401);
+        return redirect('/home');
+        // return response()->json([
+        //     'message' => 'Unauthenticated - user'
+        // ], 401);
     }
 }
