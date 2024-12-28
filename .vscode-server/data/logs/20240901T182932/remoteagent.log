@@ -1,0 +1,32 @@
+2024-09-01 18:29:32.427 [info] 
+
+
+
+
+2024-09-01 18:29:32.594 [info] Extension host agent started.
+2024-09-01 18:29:32.780 [info] [<unknown>][daab0588][ManagementConnection] New connection established.
+2024-09-01 18:29:32.781 [info] [<unknown>][c095d946][ExtensionHostConnection] New connection established.
+2024-09-01 18:29:32.904 [info] [<unknown>][c095d946][ExtensionHostConnection] <17597> Launched Extension Host Process.
+2024-09-01 18:30:10.374 [info] [<unknown>][afdf862f][ExtensionHostConnection] New connection established.
+2024-09-01 18:30:10.375 [info] [<unknown>][da8e0d05][ManagementConnection] New connection established.
+2024-09-01 18:30:10.379 [info] [<unknown>][afdf862f][ExtensionHostConnection] <17649> Launched Extension Host Process.
+2024-09-01 18:31:46.873 [info] [<unknown>][3f7988a0][ManagementConnection] New connection established.
+2024-09-01 18:31:46.875 [info] [<unknown>][df9071cf][ExtensionHostConnection] New connection established.
+2024-09-01 18:31:46.880 [info] [<unknown>][df9071cf][ExtensionHostConnection] <17782> Launched Extension Host Process.
+2024-09-01 18:34:32.596 [info] New EH opened, aborting shutdown
+2024-09-01 18:34:32.597 [error] Error: Unexpected SIGPIPE
+    at process.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/out/vs/server/node/server.main.js:191:6373)
+    at process.emit (node:events:518:28)
+2024-09-01 18:35:10.539 [info] [<unknown>][c095d946][ExtensionHostConnection] <17597> Extension Host Process exited with code: 0, signal: null.
+2024-09-01 18:36:47.122 [info] [<unknown>][afdf862f][ExtensionHostConnection] <17649> Extension Host Process exited with code: 0, signal: null.
+2024-09-01 18:47:18.114 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2024-09-01 18:47:18.115 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2024-09-01 19:16:48.634 [info] [<unknown>][2bf718a7][ExtensionHostConnection] New connection established.
+2024-09-01 19:16:48.638 [info] [<unknown>][2bf718a7][ExtensionHostConnection] <40898> Launched Extension Host Process.
+2024-09-01 19:16:48.866 [info] [<unknown>][fd06b0df][ManagementConnection] New connection established.
+2024-09-01 19:21:48.757 [info] [<unknown>][df9071cf][ExtensionHostConnection] <17782> Extension Host Process exited with code: 0, signal: null.
+2024-09-01 19:30:19.277 [info] [<unknown>][fd06b0df][ManagementConnection] The client has reconnected.
+2024-09-01 19:30:19.332 [info] [<unknown>][2bf718a7][ExtensionHostConnection] The client has reconnected.
+2024-09-01 22:30:32.315 [info] [<unknown>][2bf718a7][ExtensionHostConnection] <40898> Extension Host Process exited with code: 0, signal: null.
+2024-09-01 22:30:32.316 [info] Last EH closed, waiting before shutting down
+2024-09-01 22:35:32.318 [info] Last EH closed, shutting down

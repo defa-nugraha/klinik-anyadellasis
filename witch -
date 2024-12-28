@@ -1,0 +1,185 @@
+[33mcommit 9741612cd9529700dd27fc10e65a758428300c9c[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Sep 1 00:18:22 2024 +0700
+
+    feat: create anrtian
+
+[33mcommit 92f7064cc6bf17b44e39dcd71fe5ce158a24dd6e[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 31 23:59:43 2024 +0700
+
+    feat: riwayat rekam medis
+
+[33mcommit f9b88531ea813f1ea8a7f89b755a36f6d00e51d0[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 31 23:55:31 2024 +0700
+
+    feat: riwayat pendaftaran layanan
+
+[33mcommit 07b6bea15fb1dbaf49d623dff0dbda98f6f9ad33[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 31 21:17:38 2024 +0700
+
+    feat: dashboard pasien
+
+[33mcommit 12fac40794e4f30b405f1b19269a3598a4950e76[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 31 13:46:18 2024 +0700
+
+    feat: apotek
+
+[33mcommit 59e87f54e4eaff6909a9fb668705fb17a23a9807[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Fri Aug 30 02:02:00 2024 +0700
+
+    feat: nurse
+
+[33mcommit a6107ec59dc390c91849f4e5883f7c1772f0b5d4[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Fri Aug 30 01:41:53 2024 +0700
+
+    feat: dokter
+
+[33mcommit e907edebbcb258c7935a98ae86ddd7378435e426[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Fri Aug 30 01:16:06 2024 +0700
+
+    feat: antrian
+
+[33mcommit c6f3883631937bc11f4de4482581067b09211e8c[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Thu Aug 29 22:53:34 2024 +0700
+
+    refactor: details pasien:
+
+[33mcommit f7587d0693a380531af68fc45230c3679ac89586[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Thu Aug 29 22:20:26 2024 +0700
+
+    feat: detail obat keluar
+
+[33mcommit e05a16bb9d17c5ed65c3059ca0dedbcfb86acd99[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Thu Aug 29 22:17:35 2024 +0700
+
+    feat: detail obat keluar
+
+[33mcommit fa5bdda6b7159e6fe96d6da4e2b10da802ea50ba[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Thu Aug 29 21:59:31 2024 +0700
+
+    feat: pemberian obat dan resep
+
+[33mcommit 3e855d48c10630f829a802eac657204961dbf900[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Wed Aug 28 13:29:01 2024 +0700
+
+    feat: idk
+
+[33mcommit 4cc13d5afffbbb13cff2e0206fa6d79df8f34abe[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Wed Aug 28 02:44:56 2024 +0700
+
+    feat: update pemeriksaan, tindakan, diagnosa
+
+[33mcommit 76b435c3dca9bcd6d6759d86f9caf8b2e0390890[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Tue Aug 27 23:27:23 2024 +0700
+
+    feat: create rekam medis
+
+[33mcommit f44dbe14abc72d684290729e3f30fd64a36a598c[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 23:25:36 2024 +0700
+
+    feat: detail pasien
+
+[33mcommit 2c8b580ac523f06cc9762829bd903638e0ab726e[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 13:55:46 2024 +0700
+
+    feat: edit pasien
+
+[33mcommit 970cc3690a3e645af6532695ed2523ee83b51c92[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 13:14:49 2024 +0700
+
+    feat: add field foto
+
+[33mcommit 39944625436393cc247725c39161866a94e2d0ed[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 13:09:56 2024 +0700
+
+    feat: add field foto
+
+[33mcommit 02139fe629282ed3cf4a82a0157a5a7f40dd6dc6[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 13:04:57 2024 +0700
+
+    feat: create pasien
+
+[33mcommit cae110b519bd8831b189048cc89f95f374adb58b[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 12:29:58 2024 +0700
+
+    feat: pengeluaran obat
+
+[33mcommit 557588cb2d2421bbf7d8f3a81dc9e5256f298ed5[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 12:29:18 2024 +0700
+
+    feat: pengeluaran obat
+
+[33mcommit 7b5cf0da81885a7c84d05d30f0fcb2ac73929298[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 11:27:57 2024 +0700
+
+    feat: kelola data obat
+
+[33mcommit 4e01aae6fa637b2814646429ff8388ef8c41be60[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 11:07:03 2024 +0700
+
+    feat: kelola dokter
+
+[33mcommit 8a811216a7874d990a76e7cc63a5f0c82a7d949d[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 10:43:16 2024 +0700
+
+    feat: kelola jadwal dokter
+
+[33mcommit c4253f21d60ac82483268af2109073549108d0f0[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sun Aug 25 10:21:51 2024 +0700
+
+    feat: kelola poli
+
+[33mcommit f5d34dc1d72000a940a9d2f48a27aeae1c8e45e3[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 24 23:01:05 2024 +0700
+
+    feat: kelola users
+
+[33mcommit 9dfd528f4eb4b06d52b7d9b1d880fec36005e3a7[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 24 21:37:34 2024 +0700
+
+    feat: kelola pasien
+
+[33mcommit 5bbe8939b541b9a08809610dcaff4dd6c5f5190f[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 24 01:42:01 2024 +0700
+
+    feat: dashboard admin
+
+[33mcommit 8544e5e835b0b1bdb6e1baa3daaa406fd55993d7[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Sat Aug 24 00:47:36 2024 +0700
+
+    feat: database migrations
+
+[33mcommit 4592c9d0ba58baf3021a5e5d0ad3f67fd9394e3f[m
+Author: starduststr <starduststr0@gmail.com>
+Date:   Fri Aug 23 11:47:10 2024 +0700
+
+    feat: landing page
