@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('id_dokter');
             $table->foreignId('id_poli');
             $table->date('tgl_pemeriksaan');
-            $table->string('ammanesia');
+            $table->string('anamnesa');
             $table->enum('kandungan', [0, 1])->default(0);
             $table->enum('status', ['antrian', 'tindakan', 'di apotek', 'selesai'])->default('antrian');
             $table->string('riwayat_penyakit')->default('-');

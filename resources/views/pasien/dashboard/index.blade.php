@@ -64,8 +64,8 @@
     
         <div class="col-md-3 col-sm-6 col-12 mb-3">
             <dl>
-                <dt>Ammanesia/Keluhan(S)</dt>
-                <dd>{{ $rekamMedis->ammanesia }}</dd>
+                <dt>anamnesa/Keluhan(S)</dt>
+                <dd>{{ $rekamMedis->anamnesa }}</dd>
                 @if($rekamMedis->id_rm_kandungan)
                 <dt>Riwayat Persalinan</dt>
                 <dd>

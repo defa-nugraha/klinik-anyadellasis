@@ -49,8 +49,8 @@
                     </div>
                 </div>
 
-                <label for="ammanesia" class="form-label">Ammanesia</label>
-                <textarea name="ammanesia" id="ammanesia" cols="30" rows="4" class="form-control" required></textarea>
+                <label for="anamnesa" class="form-label">anamnesa</label>
+                <textarea name="anamnesa" id="anamnesa" cols="30" rows="4" class="form-control" required></textarea>
 
                 <div class="row">
                     <div class="col-md-6 col-lg-6 col-12">

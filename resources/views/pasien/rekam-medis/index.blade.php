@@ -7,7 +7,7 @@
         @if($profil->status_menikah == 'menikah')
             <th>Riwayat Persalinan</th>
         @endif
-        <th style="min-width: 170px">Ammanesia (S)</th>
+        <th style="min-width: 170px">anamnesa (S)</th>
         <th style="min-width: 170px">Pemeriksaan (O)</th>
         <th style="min-width: 170px">Diagnosa (A)</th>
         <th style="min-width: 170px">Tindakan (P)</th>
@@ -30,7 +30,7 @@
                         @endif
                     </td>
                 @endif
-                <td>{{ $item->ammanesia }}</td>
+                <td>{{ $item->anamnesa }}</td>
                 <td>
                     @if($item->id_pemeriksaan)
                     <dl>

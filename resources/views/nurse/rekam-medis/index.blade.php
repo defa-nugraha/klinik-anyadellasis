@@ -11,7 +11,7 @@
                 <th>Tanggal</th>
                 <th>Nama Pasien</th>
                 <th>Poli/Dokter</th>
-                <th>Ammanesia/Kesimpulan</th>
+                <th>anamnesa/Kesimpulan</th>
                 <th>Cara Bayar</th>
                 <th>Status</th>
                 <th></th>
@@ -33,8 +33,8 @@
                         </td>
                         <td>
                             <dl>
-                                <dt>Ammanesia</dt>
-                                <dd>{{ $item->ammanesia }}</dd>
+                                <dt>anamnesa</dt>
+                                <dd>{{ $item->anamnesa }}</dd>
                                 <dt>Kesimpulan</dt>
                                 <dd>{{ $item->kesimpulan }}</dd>
                             </dl>

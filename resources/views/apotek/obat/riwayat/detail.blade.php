@@ -102,9 +102,9 @@
                                 </p>
                             </li>
                             <li>
-                                <strong>Ammanesia: </strong> 
+                                <strong>anamnesa: </strong> 
                                 <p>
-                                    {{$rekamMedis->ammanesia}}
+                                    {{$rekamMedis->anamnesa}}
                                 </p>
                             </li>
                         </ul>

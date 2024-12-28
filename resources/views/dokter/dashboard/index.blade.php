@@ -99,7 +99,7 @@
                                 </li>
                                 <li>
                                     <i class="fa fa-comment-dots me-2"></i> 
-                                    <strong>Keluhan:</strong> {{ $item->ammanesia }}
+                                    <strong>Keluhan:</strong> {{ $item->anamnesa }}
                                 </li>
                                 <li>
                                     <i class="fa fa-user-md me-2"></i> 
@@ -140,7 +140,7 @@
                                 </li>
                                 <li>
                                     <i class="fa fa-comment-dots me-2"></i> 
-                                    <strong>Keluhan:</strong> {{ $item->ammanesia }}
+                                    <strong>Keluhan:</strong> {{ $item->anamnesa }}
                                 </li>
                                 <li>
                                     <i class="fa fa-user-md me-2"></i> 
