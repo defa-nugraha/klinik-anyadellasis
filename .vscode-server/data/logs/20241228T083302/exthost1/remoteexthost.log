@@ -342,3 +342,232 @@
 	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
 	at ChildProcess.emit (node:events:530:35)
 	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 08:45:50.851 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 08:45:52.049 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:29:57.883 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:29:59.087 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:30:00.606 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-28 10:30:00.607 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-28 10:32:58.513 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:32:59.727 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:35:59.145 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:36:00.380 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:38:59.760 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:39:01.289 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:42:00.380 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:42:01.595 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:45:02.357 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:45:03.584 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:48:03.142 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:48:04.369 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:51:03.758 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:51:04.896 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:54:04.384 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:54:05.598 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:57:05.286 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 10:57:06.490 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:00:06.067 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:00:07.306 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:03:06.706 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:03:07.844 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:06:07.423 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:06:08.637 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:09:08.195 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:09:09.424 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:12:08.820 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:12:10.046 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:15:09.517 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:15:10.726 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:18:10.194 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:18:11.395 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:21:10.986 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:21:12.247 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:24:11.661 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:24:12.891 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:27:12.298 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:27:13.496 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:30:12.916 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:30:14.153 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:33:13.517 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:33:14.714 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:36:14.311 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:36:15.527 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:39:15.054 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:39:16.254 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:42:15.816 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:42:17.017 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:45:16.437 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:45:17.656 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:48:17.091 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:48:18.304 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:51:17.732 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:51:18.820 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:54:18.387 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:54:19.585 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:57:19.085 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 11:57:20.195 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 12:00:19.831 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 12:00:21.074 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 12:03:20.702 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 12:03:21.908 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:19:50.211 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:19:51.269 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:19:53.511 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:19:54.512 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:43.640 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:53.740 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.741 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.742 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.742 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.742 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.742 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.742 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.743 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.744 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.744 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.744 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:20:54.744 [error] Error: Git error
+	at ChildProcess.<anonymous> (/home/dev/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/server/extensions/git/dist/main.js:2:1022609)
+	at ChildProcess.emit (node:events:530:35)
+	at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+2024-12-28 13:21:43.833 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:22:16.205 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:22:51.917 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:22:53.136 [warning] [Decorations] CAPPING events from decorations provider vscode.git 862
+2024-12-28 13:23:04.590 [warning] [Decorations] CAPPING events from decorations provider vscode.git 863
+2024-12-28 13:23:42.920 [warning] [Decorations] CAPPING events from decorations provider vscode.git 863
