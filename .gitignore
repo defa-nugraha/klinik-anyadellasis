@@ -5,6 +5,9 @@
 /public/storage
 /storage/*.key
 /vendor
+/.vscode-server
+/.ssh
+/.local
 .env
 .env.backup
 .env.production
